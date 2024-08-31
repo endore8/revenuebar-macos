@@ -12,6 +12,9 @@
 		F0FD1F502C83693E0038FB60 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F4F2C83693E0038FB60 /* DashboardView.swift */; };
 		F0FD1F522C83694F0038FB60 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F512C83694F0038FB60 /* AuthView.swift */; };
 		F0FD1F542C8369580038FB60 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F532C8369580038FB60 /* PreferencesView.swift */; };
+		F0FD1F572C836ADA0038FB60 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F562C836ADA0038FB60 /* Dependencies.swift */; };
+		F0FD1F592C836B050038FB60 /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F582C836B050038FB60 /* MenuBarController.swift */; };
+		F0FD1F5B2C836B6A0038FB60 /* MenuPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F5A2C836B6A0038FB60 /* MenuPopoverController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		F0FD1F4F2C83693E0038FB60 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		F0FD1F512C83694F0038FB60 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		F0FD1F532C8369580038FB60 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		F0FD1F562C836ADA0038FB60 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		F0FD1F582C836B050038FB60 /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
+		F0FD1F5A2C836B6A0038FB60 /* MenuPopoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 			children = (
 				F0FD1F4A2C8365FC0038FB60 /* App */,
 				F0FD1F4B2C8366020038FB60 /* Modules */,
+				F0FD1F552C836ACC0038FB60 /* Tools */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -118,6 +125,40 @@
 				F0FD1F532C8369580038FB60 /* PreferencesView.swift */,
 			);
 			path = Preferences;
+			sourceTree = "<group>";
+		};
+		F0FD1F552C836ACC0038FB60 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1F5C2C836C600038FB60 /* Dependencies */,
+				F0FD1F5D2C836C670038FB60 /* MenuBar */,
+				F0FD1F5E2C836C6E0038FB60 /* MenuPopover */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		F0FD1F5C2C836C600038FB60 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1F562C836ADA0038FB60 /* Dependencies.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		F0FD1F5D2C836C670038FB60 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1F582C836B050038FB60 /* MenuBarController.swift */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		F0FD1F5E2C836C6E0038FB60 /* MenuPopover */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1F5A2C836B6A0038FB60 /* MenuPopoverController.swift */,
+			);
+			path = MenuPopover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +233,10 @@
 				F0FD1F502C83693E0038FB60 /* DashboardView.swift in Sources */,
 				F0FD1F542C8369580038FB60 /* PreferencesView.swift in Sources */,
 				F0FD1F522C83694F0038FB60 /* AuthView.swift in Sources */,
+				F0FD1F572C836ADA0038FB60 /* Dependencies.swift in Sources */,
+				F0FD1F592C836B050038FB60 /* MenuBarController.swift in Sources */,
 				F0FD1F392C8365720038FB60 /* RevenueBarApp.swift in Sources */,
+				F0FD1F5B2C836B6A0038FB60 /* MenuPopoverController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
