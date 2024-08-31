@@ -15,7 +15,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         
         let dependencies = Dependencies()
         
-        dependencies.menuBarController.onAction = {
+        dependencies.menuBarController.onAction = { [weak self] in
+            self?.presentMenuPopover(relativeTo: $0)
         }
         
         dependencies.menuBarController.setUp()
@@ -26,4 +27,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Private
 
     private var dependencies: Dependencies?
+    
+    private func presentMenuPopover(relativeTo view: NSView) {
+        guard
+            let dependencies
+        else { return }
+        
+        dependencies.menuPopoverController.present(
+            relativeTo: view
+        )
+    }
 }

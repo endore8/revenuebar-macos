@@ -10,7 +10,7 @@ import Foundation
 import SnapKit
 
 protocol MenuBarControllerType: AnyObject {
-    var onAction: VoidClosure? { get set }
+    var onAction: TypeClosure<NSView>? { get set }
     func setUp()
 }
 
@@ -18,7 +18,7 @@ final class MenuBarController: MenuBarControllerType {
     
     // MARK: - MenuBarControllerType
     
-    var onAction: VoidClosure? = nil
+    var onAction: TypeClosure<NSView>? = nil
     
     func setUp() {
         
@@ -45,10 +45,19 @@ final class MenuBarController: MenuBarControllerType {
     private lazy var systemStatusItem: NSStatusItem = {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem.button?.onAction = { [weak self] in
-            self?.onAction?()
+            self?.performActionHandler()
         }
         return statusItem
     }()
+    
+    private func performActionHandler() {
+        guard
+            let onAction,
+            let view = self.systemStatusItem.button
+        else { return }
+
+        onAction(view)
+    }
 }
 
 extension NSStatusItem {
