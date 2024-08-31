@@ -22,9 +22,15 @@ final class MenuBarController: MenuBarControllerType {
     
     func setUp() {
         
-        let view = NSView()
-        view.wantsLayer = true
-        view.layer?.backgroundColor = NSColor.blue.cgColor
+        let view = NSImageView()
+        view.image = NSImage(
+            systemSymbolName: "dollarsign.circle.fill",
+            accessibilityDescription: nil
+        )
+        view.symbolConfiguration = NSImage.SymbolConfiguration(
+            pointSize: 18,
+            weight: .medium
+        )
         
         self.systemStatusItem.button?.addSubview(view) {
             $0.leading.trailing.equalToSuperview()
