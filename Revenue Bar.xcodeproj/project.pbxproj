@@ -28,6 +28,10 @@
 		F0FD1F7C2C837BC50038FB60 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F7B2C837BC50038FB60 /* Closures.swift */; };
 		F0FD1F812C837D280038FB60 /* NSView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F802C837D280038FB60 /* NSView+Convenience.swift */; };
 		F0FD1F862C837D830038FB60 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0FD1F852C837D830038FB60 /* SnapKit */; };
+		F0FD1F892C8382010038FB60 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F882C8382010038FB60 /* EventMonitor.swift */; };
+		F0FD1F8B2C8386230038FB60 /* Numeric+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F8A2C8386230038FB60 /* Numeric+Convenience.swift */; };
+		F0FD1F8D2C8389C10038FB60 /* Optional+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F8C2C8389C10038FB60 /* Optional+Convenience.swift */; };
+		F0FD1F8F2C8389F60038FB60 /* CGRect+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F8E2C8389F60038FB60 /* CGRect+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +69,10 @@
 		F0FD1F782C837B9F0038FB60 /* NSButton+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSButton+Convenience.swift"; sourceTree = "<group>"; };
 		F0FD1F7B2C837BC50038FB60 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		F0FD1F802C837D280038FB60 /* NSView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Convenience.swift"; sourceTree = "<group>"; };
+		F0FD1F882C8382010038FB60 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		F0FD1F8A2C8386230038FB60 /* Numeric+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+Convenience.swift"; sourceTree = "<group>"; };
+		F0FD1F8C2C8389C10038FB60 /* Optional+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Convenience.swift"; sourceTree = "<group>"; };
+		F0FD1F8E2C8389F60038FB60 /* CGRect+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +214,7 @@
 		F0FD1F672C8378990038FB60 /* Open */ = {
 			isa = PBXGroup;
 			children = (
+				F0FD1F872C8381FC0038FB60 /* EventMonitor */,
 				F0FD1F7A2C837BBD0038FB60 /* Closures */,
 				F0FD1F6C2C8378FF0038FB60 /* Extensions */,
 				F0FD1F692C8378A90038FB60 /* KeyValueStorage */,
@@ -235,11 +244,14 @@
 			isa = PBXGroup;
 			children = (
 				F0FD1F762C837A3D0038FB60 /* Bool+Convenience.swift */,
+				F0FD1F8E2C8389F60038FB60 /* CGRect+Convenience.swift */,
 				F0FD1F722C837A000038FB60 /* Double+Convenience.swift */,
 				F0FD1F742C837A170038FB60 /* Int+Convenience.swift */,
 				F0FD1F782C837B9F0038FB60 /* NSButton+Convenience.swift */,
-				F0FD1F6D2C8379070038FB60 /* StaticString+Convenience.swift */,
 				F0FD1F802C837D280038FB60 /* NSView+Convenience.swift */,
+				F0FD1F8A2C8386230038FB60 /* Numeric+Convenience.swift */,
+				F0FD1F8C2C8389C10038FB60 /* Optional+Convenience.swift */,
+				F0FD1F6D2C8379070038FB60 /* StaticString+Convenience.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -257,6 +269,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0FD1F872C8381FC0038FB60 /* EventMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1F882C8382010038FB60 /* EventMonitor.swift */,
+			);
+			path = EventMonitor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0FD1F6E2C8379070038FB60 /* StaticString+Convenience.swift in Sources */,
+				F0FD1F892C8382010038FB60 /* EventMonitor.swift in Sources */,
 				F0FD1F752C837A170038FB60 /* Int+Convenience.swift in Sources */,
 				F0FD1F502C83693E0038FB60 /* DashboardView.swift in Sources */,
 				F0FD1F542C8369580038FB60 /* PreferencesView.swift in Sources */,
@@ -346,11 +367,14 @@
 				F0FD1F7C2C837BC50038FB60 /* Closures.swift in Sources */,
 				F0FD1F812C837D280038FB60 /* NSView+Convenience.swift in Sources */,
 				F0FD1F732C837A000038FB60 /* Double+Convenience.swift in Sources */,
+				F0FD1F8D2C8389C10038FB60 /* Optional+Convenience.swift in Sources */,
 				F0FD1F642C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift in Sources */,
 				F0FD1F662C8370EF0038FB60 /* MenuPopoverWindow.swift in Sources */,
 				F0FD1F622C836F500038FB60 /* AppDelegate.swift in Sources */,
 				F0FD1F792C837B9F0038FB60 /* NSButton+Convenience.swift in Sources */,
+				F0FD1F8F2C8389F60038FB60 /* CGRect+Convenience.swift in Sources */,
 				F0FD1F522C83694F0038FB60 /* AuthView.swift in Sources */,
+				F0FD1F8B2C8386230038FB60 /* Numeric+Convenience.swift in Sources */,
 				F0FD1F6B2C8378D30038FB60 /* KeyValueStorage.swift in Sources */,
 				F0FD1F572C836ADA0038FB60 /* Dependencies.swift in Sources */,
 				F0FD1F592C836B050038FB60 /* MenuBarController.swift in Sources */,
