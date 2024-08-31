@@ -7,19 +7,12 @@
 
 import AppKit
 
-final class MenuPopoverView: NSView {
+final class MenuPopoverView: BaseNSView {
     
-    init() {
-        super.init(frame: .zero)
-        
-        self.wantsLayer = true
+    override init() {
+        super.init()
         
         self.layer?.backgroundColor = NSColor.blue.cgColor
         self.layer?.cornerRadius = 10
-    }
-    
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
