@@ -8,16 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		F0FD1F392C8365720038FB60 /* RevenueBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F382C8365720038FB60 /* RevenueBarApp.swift */; };
-		F0FD1F3B2C8365720038FB60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F3A2C8365720038FB60 /* ContentView.swift */; };
 		F0FD1F3D2C8365730038FB60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FD1F3C2C8365730038FB60 /* Assets.xcassets */; };
+		F0FD1F502C83693E0038FB60 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F4F2C83693E0038FB60 /* DashboardView.swift */; };
+		F0FD1F522C83694F0038FB60 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F512C83694F0038FB60 /* AuthView.swift */; };
+		F0FD1F542C8369580038FB60 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F532C8369580038FB60 /* PreferencesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F0FD1F352C8365720038FB60 /* Revenue Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Revenue Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FD1F382C8365720038FB60 /* RevenueBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueBarApp.swift; sourceTree = "<group>"; };
-		F0FD1F3A2C8365720038FB60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F0FD1F3C2C8365730038FB60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0FD1F412C8365730038FB60 /* RevenueBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RevenueBar.entitlements; sourceTree = "<group>"; };
+		F0FD1F4F2C83693E0038FB60 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		F0FD1F512C83694F0038FB60 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		F0FD1F532C8369580038FB60 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +89,35 @@
 		F0FD1F4B2C8366020038FB60 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				F0FD1F3A2C8365720038FB60 /* ContentView.swift */,
+				F0FD1F4C2C8368C60038FB60 /* Auth */,
+				F0FD1F4D2C8368E40038FB60 /* Dashboard */,
+				F0FD1F4E2C8368EB0038FB60 /* Preferences */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		F0FD1F4C2C8368C60038FB60 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1F512C83694F0038FB60 /* AuthView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		F0FD1F4D2C8368E40038FB60 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1F4F2C83693E0038FB60 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		F0FD1F4E2C8368EB0038FB60 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1F532C8369580038FB60 /* PreferencesView.swift */,
+			);
+			path = Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +189,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0FD1F3B2C8365720038FB60 /* ContentView.swift in Sources */,
+				F0FD1F502C83693E0038FB60 /* DashboardView.swift in Sources */,
+				F0FD1F542C8369580038FB60 /* PreferencesView.swift in Sources */,
+				F0FD1F522C83694F0038FB60 /* AuthView.swift in Sources */,
 				F0FD1F392C8365720038FB60 /* RevenueBarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

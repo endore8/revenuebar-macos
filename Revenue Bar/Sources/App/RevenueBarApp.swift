@@ -12,7 +12,7 @@ struct RevenueBarApp: App {
     
     var body: some Scene {
         MenuBarExtra("Utility App", systemImage: "hammer") {
-            ContentView()
+            AuthView()
         }
     }
 }
