@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F0FD1F392C8365720038FB60 /* RevenueBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F382C8365720038FB60 /* RevenueBarApp.swift */; };
 		F0FD1F3D2C8365730038FB60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FD1F3C2C8365730038FB60 /* Assets.xcassets */; };
 		F0FD1F502C83693E0038FB60 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F4F2C83693E0038FB60 /* DashboardView.swift */; };
 		F0FD1F522C83694F0038FB60 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F512C83694F0038FB60 /* AuthView.swift */; };
@@ -15,11 +14,12 @@
 		F0FD1F572C836ADA0038FB60 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F562C836ADA0038FB60 /* Dependencies.swift */; };
 		F0FD1F592C836B050038FB60 /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F582C836B050038FB60 /* MenuBarController.swift */; };
 		F0FD1F5B2C836B6A0038FB60 /* MenuPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F5A2C836B6A0038FB60 /* MenuPopoverController.swift */; };
+		F0FD1F602C836F400038FB60 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F5F2C836F400038FB60 /* main.swift */; };
+		F0FD1F622C836F500038FB60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F612C836F500038FB60 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F0FD1F352C8365720038FB60 /* Revenue Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Revenue Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0FD1F382C8365720038FB60 /* RevenueBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueBarApp.swift; sourceTree = "<group>"; };
 		F0FD1F3C2C8365730038FB60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0FD1F412C8365730038FB60 /* RevenueBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RevenueBar.entitlements; sourceTree = "<group>"; };
 		F0FD1F4F2C83693E0038FB60 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -28,6 +28,8 @@
 		F0FD1F562C836ADA0038FB60 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		F0FD1F582C836B050038FB60 /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
 		F0FD1F5A2C836B6A0038FB60 /* MenuPopoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverController.swift; sourceTree = "<group>"; };
+		F0FD1F5F2C836F400038FB60 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		F0FD1F612C836F500038FB60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +90,8 @@
 		F0FD1F4A2C8365FC0038FB60 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				F0FD1F382C8365720038FB60 /* RevenueBarApp.swift */,
+				F0FD1F612C836F500038FB60 /* AppDelegate.swift */,
+				F0FD1F5F2C836F400038FB60 /* main.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -232,10 +235,11 @@
 			files = (
 				F0FD1F502C83693E0038FB60 /* DashboardView.swift in Sources */,
 				F0FD1F542C8369580038FB60 /* PreferencesView.swift in Sources */,
+				F0FD1F602C836F400038FB60 /* main.swift in Sources */,
+				F0FD1F622C836F500038FB60 /* AppDelegate.swift in Sources */,
 				F0FD1F522C83694F0038FB60 /* AuthView.swift in Sources */,
 				F0FD1F572C836ADA0038FB60 /* Dependencies.swift in Sources */,
 				F0FD1F592C836B050038FB60 /* MenuBarController.swift in Sources */,
-				F0FD1F392C8365720038FB60 /* RevenueBarApp.swift in Sources */,
 				F0FD1F5B2C836B6A0038FB60 /* MenuPopoverController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
