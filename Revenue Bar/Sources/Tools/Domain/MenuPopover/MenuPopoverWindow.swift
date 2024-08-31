@@ -9,7 +9,7 @@ import AppKit
 
 final class MenuPopoverWindow: NSWindow {
     
-    init() {
+    init(contentView: NSView) {
         super.init(
             contentRect: .zero,
             styleMask: [],
@@ -21,6 +21,7 @@ final class MenuPopoverWindow: NSWindow {
             calibratedWhite: .one,
             alpha: .zero
         )
+        self.contentView = contentView
         self.hasShadow = true
         self.isOpaque = false
         self.level = .statusBar

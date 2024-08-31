@@ -35,74 +35,18 @@ final class MenuPopoverController: MenuPopoverControllerType {
             self.hide()
         }
         
-        let navigationCoordinator = MenuPopoverNavigationCoordinator()
-        let window = MenuPopoverWindow()
-        window.contentView = navigationCoordinator.view
-        let windowController = NSWindowController()
-        
-        self.navigationCoordinator = navigationCoordinator
-        
-        self.targetFrame = targetFrame
-        self.targetScreen = targetScreen
-        
-        self.windowController = windowController
-        
-        self.updateFrame(window: window)
-        
-        windowController.window = window
-        windowController.showWindow(nil)
-        
-        
-        self.eventMonitor.start()
-    }
-    
-    // MARK: - MenuPopoverVisibilityControllerType
-    
-    func hide() {
-        self.eventMonitor.stop()
-        
-        self.navigationCoordinator = nil
-        
-        self.targetFrame = nil
-        self.targetScreen = nil
-        
-        self.windowController?.close()
-        self.windowController = nil
-    }
-    
-    // MARK: - Private
-    
-    private lazy var eventMonitor: EventMonitor = .init(mask: [.leftMouseUp, .rightMouseUp]) { event in
-        if event?.window != self.windowController?.window {
-            self.hide()
+        let eventMonitor = EventMonitor(mask: [.leftMouseUp, .rightMouseUp]) { [weak self] event in
+            if event?.window != self?.windowController?.window {
+                self?.hide()
+            }
         }
-    }
-    
-    private var isShown: Bool {
-        self.windowController.isNotNil
-    }
-    
-    private var navigationCoordinator: MenuPopoverNavigationCoordinatorType? = nil
-    
-    private var targetFrame: CGRect? = nil
-    private weak var targetScreen: NSScreen? = nil
-    
-    private var windowController: NSWindowController? = nil
-    
-    private func updateWindowFrame() {
-        guard
-            let window = self.windowController?.window
-        else { return }
-        
-        self.updateFrame(window: window)
-    }
-    
-    private func updateFrame(window: NSWindow) {
-            
-        guard
-            let targetFrame,
-            let targetScreen
-        else { return }
+        let navigationCoordinator = MenuPopoverNavigationCoordinator()
+        let window = MenuPopoverWindow(
+            contentView: navigationCoordinator.view
+        )
+        let windowController = NSWindowController(
+            window: window
+        )
         
         let screenFrame = targetScreen.visibleFrame
         let width: CGFloat = 400
@@ -130,5 +74,35 @@ final class MenuPopoverController: MenuPopoverControllerType {
             frame,
             display: true
         )
+        
+        self.eventMonitor = eventMonitor
+        self.navigationCoordinator = navigationCoordinator
+        self.targetScreen = targetScreen
+        self.windowController = windowController
+        
+        self.eventMonitor?.start()
+        self.windowController?.showWindow(nil)
     }
+    
+    // MARK: - MenuPopoverVisibilityControllerType
+    
+    func hide() {
+        self.windowController?.close()
+        
+        self.eventMonitor = nil
+        self.navigationCoordinator = nil
+        self.targetScreen = nil
+        self.windowController = nil
+    }
+    
+    // MARK: - Private
+    
+    private var isShown: Bool {
+        self.windowController.isNotNil
+    }
+    
+    private var eventMonitor: EventMonitor? = nil
+    private var navigationCoordinator: MenuPopoverNavigationCoordinatorType? = nil
+    private weak var targetScreen: NSScreen? = nil
+    private var windowController: NSWindowController? = nil
 }
