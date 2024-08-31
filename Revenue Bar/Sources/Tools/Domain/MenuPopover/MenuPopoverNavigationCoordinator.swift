@@ -16,6 +16,8 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     
     init() {
         self.navigationView = MenuPopoverView()
+        
+        self.showInitial()
     }
     
     // MARK: - MenuPopoverNavigationCoordinatorType
@@ -27,4 +29,30 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     // MARK: - Private
     
     private let navigationView: MenuPopoverView
+    
+    private func showInitial() {
+        // TODO:
+        self.showAuth()
+    }
+    
+    private func showAuth() {
+        let view = AuthView()
+        self.navigationView.show(
+            view: view
+        )
+    }
+    
+    private func showDashboard() {
+        let view = DashboardView()
+        self.navigationView.show(
+            view: view
+        )
+    }
+    
+    private func showPreferences() {
+        let view = PreferencesView()
+        self.navigationView.show(
+            view: view
+        )
+    }
 }
