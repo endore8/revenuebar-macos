@@ -9,16 +9,22 @@ import AppKit
 import Foundation
 
 protocol MenuPopoverNavigationCoordinatorType {
-    var view: MenuPopoverView { get }
+    var view: NSView { get }
 }
 
 final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorType {
     
     init() {
-        self.view = MenuPopoverView()
+        self.navigationView = MenuPopoverView()
     }
     
     // MARK: - MenuPopoverNavigationCoordinatorType
     
-    let view: MenuPopoverView
+    var view: NSView {
+        self.navigationView
+    }
+    
+    // MARK: - Private
+    
+    private let navigationView: MenuPopoverView
 }
