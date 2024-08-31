@@ -16,6 +16,8 @@
 		F0FD1F5B2C836B6A0038FB60 /* MenuPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F5A2C836B6A0038FB60 /* MenuPopoverController.swift */; };
 		F0FD1F602C836F400038FB60 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F5F2C836F400038FB60 /* main.swift */; };
 		F0FD1F622C836F500038FB60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F612C836F500038FB60 /* AppDelegate.swift */; };
+		F0FD1F642C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F632C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift */; };
+		F0FD1F662C8370EF0038FB60 /* MenuPopoverWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F652C8370EF0038FB60 /* MenuPopoverWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		F0FD1F5A2C836B6A0038FB60 /* MenuPopoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverController.swift; sourceTree = "<group>"; };
 		F0FD1F5F2C836F400038FB60 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F0FD1F612C836F500038FB60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F0FD1F632C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverNavigationCoordinator.swift; sourceTree = "<group>"; };
+		F0FD1F652C8370EF0038FB60 /* MenuPopoverWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				F0FD1F5A2C836B6A0038FB60 /* MenuPopoverController.swift */,
+				F0FD1F632C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift */,
+				F0FD1F652C8370EF0038FB60 /* MenuPopoverWindow.swift */,
 			);
 			path = MenuPopover;
 			sourceTree = "<group>";
@@ -236,6 +242,8 @@
 				F0FD1F502C83693E0038FB60 /* DashboardView.swift in Sources */,
 				F0FD1F542C8369580038FB60 /* PreferencesView.swift in Sources */,
 				F0FD1F602C836F400038FB60 /* main.swift in Sources */,
+				F0FD1F642C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift in Sources */,
+				F0FD1F662C8370EF0038FB60 /* MenuPopoverWindow.swift in Sources */,
 				F0FD1F622C836F500038FB60 /* AppDelegate.swift in Sources */,
 				F0FD1F522C83694F0038FB60 /* AuthView.swift in Sources */,
 				F0FD1F572C836ADA0038FB60 /* Dependencies.swift in Sources */,
