@@ -15,6 +15,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         
         let dependencies = Dependencies()
         
+        dependencies.menuBarController.onAction = {
+        }
+        
+        dependencies.menuBarController.setUp()
+        
         self.dependencies = dependencies
     }
     

@@ -24,7 +24,24 @@
 		F0FD1F732C837A000038FB60 /* Double+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F722C837A000038FB60 /* Double+Convenience.swift */; };
 		F0FD1F752C837A170038FB60 /* Int+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F742C837A170038FB60 /* Int+Convenience.swift */; };
 		F0FD1F772C837A3D0038FB60 /* Bool+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F762C837A3D0038FB60 /* Bool+Convenience.swift */; };
+		F0FD1F792C837B9F0038FB60 /* NSButton+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F782C837B9F0038FB60 /* NSButton+Convenience.swift */; };
+		F0FD1F7C2C837BC50038FB60 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F7B2C837BC50038FB60 /* Closures.swift */; };
+		F0FD1F812C837D280038FB60 /* NSView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F802C837D280038FB60 /* NSView+Convenience.swift */; };
+		F0FD1F862C837D830038FB60 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F0FD1F852C837D830038FB60 /* SnapKit */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F0FD1F832C837D7C0038FB60 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F0FD1F352C8365720038FB60 /* Revenue Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Revenue Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +62,9 @@
 		F0FD1F722C837A000038FB60 /* Double+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Convenience.swift"; sourceTree = "<group>"; };
 		F0FD1F742C837A170038FB60 /* Int+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Convenience.swift"; sourceTree = "<group>"; };
 		F0FD1F762C837A3D0038FB60 /* Bool+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Convenience.swift"; sourceTree = "<group>"; };
+		F0FD1F782C837B9F0038FB60 /* NSButton+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSButton+Convenience.swift"; sourceTree = "<group>"; };
+		F0FD1F7B2C837BC50038FB60 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
+		F0FD1F802C837D280038FB60 /* NSView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0FD1F712C8379C90038FB60 /* KeychainAccess in Frameworks */,
+				F0FD1F862C837D830038FB60 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +85,7 @@
 			children = (
 				F0FD1F372C8365720038FB60 /* Revenue Bar */,
 				F0FD1F362C8365720038FB60 /* Products */,
+				F0FD1F842C837D830038FB60 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +206,7 @@
 		F0FD1F672C8378990038FB60 /* Open */ = {
 			isa = PBXGroup;
 			children = (
+				F0FD1F7A2C837BBD0038FB60 /* Closures */,
 				F0FD1F6C2C8378FF0038FB60 /* Extensions */,
 				F0FD1F692C8378A90038FB60 /* KeyValueStorage */,
 			);
@@ -214,9 +237,26 @@
 				F0FD1F762C837A3D0038FB60 /* Bool+Convenience.swift */,
 				F0FD1F722C837A000038FB60 /* Double+Convenience.swift */,
 				F0FD1F742C837A170038FB60 /* Int+Convenience.swift */,
+				F0FD1F782C837B9F0038FB60 /* NSButton+Convenience.swift */,
 				F0FD1F6D2C8379070038FB60 /* StaticString+Convenience.swift */,
+				F0FD1F802C837D280038FB60 /* NSView+Convenience.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F0FD1F7A2C837BBD0038FB60 /* Closures */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1F7B2C837BC50038FB60 /* Closures.swift */,
+			);
+			path = Closures;
+			sourceTree = "<group>";
+		};
+		F0FD1F842C837D830038FB60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +269,7 @@
 				F0FD1F312C8365720038FB60 /* Sources */,
 				F0FD1F322C8365720038FB60 /* Frameworks */,
 				F0FD1F332C8365720038FB60 /* Resources */,
+				F0FD1F832C837D7C0038FB60 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,6 +278,7 @@
 			name = "Revenue Bar";
 			packageProductDependencies = (
 				F0FD1F702C8379C90038FB60 /* KeychainAccess */,
+				F0FD1F852C837D830038FB60 /* SnapKit */,
 			);
 			productName = "Revenue Bar";
 			productReference = F0FD1F352C8365720038FB60 /* Revenue Bar.app */;
@@ -268,6 +310,7 @@
 			mainGroup = F0FD1F2C2C8365720038FB60;
 			packageReferences = (
 				F0FD1F6F2C8379C90038FB60 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				F0FD1F7D2C837CD70038FB60 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = F0FD1F362C8365720038FB60 /* Products */;
 			projectDirPath = "";
@@ -300,10 +343,13 @@
 				F0FD1F542C8369580038FB60 /* PreferencesView.swift in Sources */,
 				F0FD1F772C837A3D0038FB60 /* Bool+Convenience.swift in Sources */,
 				F0FD1F602C836F400038FB60 /* main.swift in Sources */,
+				F0FD1F7C2C837BC50038FB60 /* Closures.swift in Sources */,
+				F0FD1F812C837D280038FB60 /* NSView+Convenience.swift in Sources */,
 				F0FD1F732C837A000038FB60 /* Double+Convenience.swift in Sources */,
 				F0FD1F642C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift in Sources */,
 				F0FD1F662C8370EF0038FB60 /* MenuPopoverWindow.swift in Sources */,
 				F0FD1F622C836F500038FB60 /* AppDelegate.swift in Sources */,
+				F0FD1F792C837B9F0038FB60 /* NSButton+Convenience.swift in Sources */,
 				F0FD1F522C83694F0038FB60 /* AuthView.swift in Sources */,
 				F0FD1F6B2C8378D30038FB60 /* KeyValueStorage.swift in Sources */,
 				F0FD1F572C836ADA0038FB60 /* Dependencies.swift in Sources */,
@@ -525,6 +571,14 @@
 				version = 4.2.2;
 			};
 		};
+		F0FD1F7D2C837CD70038FB60 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = exactVersion;
+				version = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -532,6 +586,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F0FD1F6F2C8379C90038FB60 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		F0FD1F852C837D830038FB60 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0FD1F7D2C837CD70038FB60 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
