@@ -18,6 +18,12 @@
 		F0FD1F622C836F500038FB60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F612C836F500038FB60 /* AppDelegate.swift */; };
 		F0FD1F642C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F632C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift */; };
 		F0FD1F662C8370EF0038FB60 /* MenuPopoverWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F652C8370EF0038FB60 /* MenuPopoverWindow.swift */; };
+		F0FD1F6B2C8378D30038FB60 /* KeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F6A2C8378D30038FB60 /* KeyValueStorage.swift */; };
+		F0FD1F6E2C8379070038FB60 /* StaticString+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F6D2C8379070038FB60 /* StaticString+Convenience.swift */; };
+		F0FD1F712C8379C90038FB60 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F0FD1F702C8379C90038FB60 /* KeychainAccess */; };
+		F0FD1F732C837A000038FB60 /* Double+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F722C837A000038FB60 /* Double+Convenience.swift */; };
+		F0FD1F752C837A170038FB60 /* Int+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F742C837A170038FB60 /* Int+Convenience.swift */; };
+		F0FD1F772C837A3D0038FB60 /* Bool+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F762C837A3D0038FB60 /* Bool+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +40,11 @@
 		F0FD1F612C836F500038FB60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0FD1F632C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverNavigationCoordinator.swift; sourceTree = "<group>"; };
 		F0FD1F652C8370EF0038FB60 /* MenuPopoverWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverWindow.swift; sourceTree = "<group>"; };
+		F0FD1F6A2C8378D30038FB60 /* KeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorage.swift; sourceTree = "<group>"; };
+		F0FD1F6D2C8379070038FB60 /* StaticString+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StaticString+Convenience.swift"; sourceTree = "<group>"; };
+		F0FD1F722C837A000038FB60 /* Double+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Convenience.swift"; sourceTree = "<group>"; };
+		F0FD1F742C837A170038FB60 /* Int+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Convenience.swift"; sourceTree = "<group>"; };
+		F0FD1F762C837A3D0038FB60 /* Bool+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0FD1F712C8379C90038FB60 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,9 +149,8 @@
 		F0FD1F552C836ACC0038FB60 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				F0FD1F5C2C836C600038FB60 /* Dependencies */,
-				F0FD1F5D2C836C670038FB60 /* MenuBar */,
-				F0FD1F5E2C836C6E0038FB60 /* MenuPopover */,
+				F0FD1F682C83789D0038FB60 /* Domain */,
+				F0FD1F672C8378990038FB60 /* Open */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -170,6 +181,44 @@
 			path = MenuPopover;
 			sourceTree = "<group>";
 		};
+		F0FD1F672C8378990038FB60 /* Open */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1F6C2C8378FF0038FB60 /* Extensions */,
+				F0FD1F692C8378A90038FB60 /* KeyValueStorage */,
+			);
+			path = Open;
+			sourceTree = "<group>";
+		};
+		F0FD1F682C83789D0038FB60 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1F5C2C836C600038FB60 /* Dependencies */,
+				F0FD1F5D2C836C670038FB60 /* MenuBar */,
+				F0FD1F5E2C836C6E0038FB60 /* MenuPopover */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F0FD1F692C8378A90038FB60 /* KeyValueStorage */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1F6A2C8378D30038FB60 /* KeyValueStorage.swift */,
+			);
+			path = KeyValueStorage;
+			sourceTree = "<group>";
+		};
+		F0FD1F6C2C8378FF0038FB60 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1F762C837A3D0038FB60 /* Bool+Convenience.swift */,
+				F0FD1F722C837A000038FB60 /* Double+Convenience.swift */,
+				F0FD1F742C837A170038FB60 /* Int+Convenience.swift */,
+				F0FD1F6D2C8379070038FB60 /* StaticString+Convenience.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,6 +235,9 @@
 			dependencies = (
 			);
 			name = "Revenue Bar";
+			packageProductDependencies = (
+				F0FD1F702C8379C90038FB60 /* KeychainAccess */,
+			);
 			productName = "Revenue Bar";
 			productReference = F0FD1F352C8365720038FB60 /* Revenue Bar.app */;
 			productType = "com.apple.product-type.application";
@@ -214,6 +266,9 @@
 				Base,
 			);
 			mainGroup = F0FD1F2C2C8365720038FB60;
+			packageReferences = (
+				F0FD1F6F2C8379C90038FB60 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = F0FD1F362C8365720038FB60 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -239,13 +294,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0FD1F6E2C8379070038FB60 /* StaticString+Convenience.swift in Sources */,
+				F0FD1F752C837A170038FB60 /* Int+Convenience.swift in Sources */,
 				F0FD1F502C83693E0038FB60 /* DashboardView.swift in Sources */,
 				F0FD1F542C8369580038FB60 /* PreferencesView.swift in Sources */,
+				F0FD1F772C837A3D0038FB60 /* Bool+Convenience.swift in Sources */,
 				F0FD1F602C836F400038FB60 /* main.swift in Sources */,
+				F0FD1F732C837A000038FB60 /* Double+Convenience.swift in Sources */,
 				F0FD1F642C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift in Sources */,
 				F0FD1F662C8370EF0038FB60 /* MenuPopoverWindow.swift in Sources */,
 				F0FD1F622C836F500038FB60 /* AppDelegate.swift in Sources */,
 				F0FD1F522C83694F0038FB60 /* AuthView.swift in Sources */,
+				F0FD1F6B2C8378D30038FB60 /* KeyValueStorage.swift in Sources */,
 				F0FD1F572C836ADA0038FB60 /* Dependencies.swift in Sources */,
 				F0FD1F592C836B050038FB60 /* MenuBarController.swift in Sources */,
 				F0FD1F5B2C836B6A0038FB60 /* MenuPopoverController.swift in Sources */,
@@ -455,6 +515,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F0FD1F6F2C8379C90038FB60 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = exactVersion;
+				version = 4.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F0FD1F702C8379C90038FB60 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0FD1F6F2C8379C90038FB60 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F0FD1F2D2C8365720038FB60 /* Project object */;
 }
