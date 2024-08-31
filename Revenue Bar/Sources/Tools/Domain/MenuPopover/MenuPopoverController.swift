@@ -36,7 +36,8 @@ final class MenuPopoverController: MenuPopoverControllerType {
         }
         
         let navigationCoordinator = MenuPopoverNavigationCoordinator()
-        let window = navigationCoordinator.window
+        let window = MenuPopoverWindow()
+        window.contentView = navigationCoordinator.view
         let windowController = NSWindowController()
         
         self.navigationCoordinator = navigationCoordinator

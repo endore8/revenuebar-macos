@@ -32,6 +32,7 @@
 		F0FD1F8B2C8386230038FB60 /* Numeric+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F8A2C8386230038FB60 /* Numeric+Convenience.swift */; };
 		F0FD1F8D2C8389C10038FB60 /* Optional+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F8C2C8389C10038FB60 /* Optional+Convenience.swift */; };
 		F0FD1F8F2C8389F60038FB60 /* CGRect+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F8E2C8389F60038FB60 /* CGRect+Convenience.swift */; };
+		F0FD1F912C838F1B0038FB60 /* MenuPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F902C838F1B0038FB60 /* MenuPopoverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,6 +74,7 @@
 		F0FD1F8A2C8386230038FB60 /* Numeric+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+Convenience.swift"; sourceTree = "<group>"; };
 		F0FD1F8C2C8389C10038FB60 /* Optional+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Convenience.swift"; sourceTree = "<group>"; };
 		F0FD1F8E2C8389F60038FB60 /* CGRect+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Convenience.swift"; sourceTree = "<group>"; };
+		F0FD1F902C838F1B0038FB60 /* MenuPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPopoverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			children = (
 				F0FD1F5A2C836B6A0038FB60 /* MenuPopoverController.swift */,
 				F0FD1F632C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift */,
+				F0FD1F902C838F1B0038FB60 /* MenuPopoverView.swift */,
 				F0FD1F652C8370EF0038FB60 /* MenuPopoverWindow.swift */,
 			);
 			path = MenuPopover;
@@ -362,6 +365,7 @@
 				F0FD1F752C837A170038FB60 /* Int+Convenience.swift in Sources */,
 				F0FD1F502C83693E0038FB60 /* DashboardView.swift in Sources */,
 				F0FD1F542C8369580038FB60 /* PreferencesView.swift in Sources */,
+				F0FD1F912C838F1B0038FB60 /* MenuPopoverView.swift in Sources */,
 				F0FD1F772C837A3D0038FB60 /* Bool+Convenience.swift in Sources */,
 				F0FD1F602C836F400038FB60 /* main.swift in Sources */,
 				F0FD1F7C2C837BC50038FB60 /* Closures.swift in Sources */,

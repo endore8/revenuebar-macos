@@ -19,7 +19,7 @@ final class MenuPopoverWindow: NSWindow {
         
         self.backgroundColor = NSColor(
             calibratedWhite: .one,
-            alpha: .one // TODO: Should be zero instead
+            alpha: .zero
         )
         self.hasShadow = true
         self.isOpaque = false
