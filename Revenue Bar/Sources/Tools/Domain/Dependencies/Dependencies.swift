@@ -14,8 +14,12 @@ struct Dependencies {
     
     init() {
         
+        let viewModelFactory = ViewModelFactory()
+        
         let menuBarController = MenuBarController()
-        let menuPopoverController = MenuPopoverController()
+        let menuPopoverController = MenuPopoverController(
+            viewModelFactory: viewModelFactory
+        )
         
         self.menuBarController = menuBarController
         self.menuPopoverController = menuPopoverController

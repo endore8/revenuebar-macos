@@ -14,7 +14,11 @@ protocol MenuPopoverNavigationCoordinatorType {
 
 final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorType {
     
-    init() {
+    let viewModelFactory: ViewModelFactoryType
+    
+    init(viewModelFactory: ViewModelFactoryType) {
+        self.viewModelFactory = viewModelFactory
+        
         self.navigationView = MenuPopoverView()
         
         self.showInitial()
@@ -36,21 +40,30 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     }
     
     private func showAuth() {
-        let view = AuthView()
+        let viewModel = AuthViewModel()
+        let view = AuthView(
+            viewModel: viewModel
+        )
         self.navigationView.show(
             view: view
         )
     }
     
     private func showDashboard() {
-        let view = DashboardView()
+        let viewModel = DashboardViewModel()
+        let view = DashboardView(
+            viewModel: viewModel
+        )
         self.navigationView.show(
             view: view
         )
     }
     
     private func showPreferences() {
-        let view = PreferencesView()
+        let viewModel = PreferencesViewModel()
+        let view = PreferencesView(
+            viewModel: viewModel
+        )
         self.navigationView.show(
             view: view
         )

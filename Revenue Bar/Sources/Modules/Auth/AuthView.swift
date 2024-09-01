@@ -6,13 +6,12 @@
 //
 
 import SwiftUI
-
+  
 struct AuthView: View {
+    
+    var viewModel: AuthViewModel
+    
     var body: some View {
         Text("Auth")
     }
-}
-
-#Preview {
-    AuthView()
 }

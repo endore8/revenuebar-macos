@@ -14,6 +14,12 @@ protocol MenuPopoverControllerType {
 
 final class MenuPopoverController: MenuPopoverControllerType {
     
+    let viewModelFactory: ViewModelFactoryType
+    
+    init(viewModelFactory: ViewModelFactoryType) {
+        self.viewModelFactory = viewModelFactory
+    }
+    
     // MARK: - MenuPopoverControllerType
     
     func present(relativeTo view: NSView) {
@@ -40,7 +46,9 @@ final class MenuPopoverController: MenuPopoverControllerType {
                 self?.hide()
             }
         }
-        let navigationCoordinator = MenuPopoverNavigationCoordinator()
+        let navigationCoordinator = MenuPopoverNavigationCoordinator(
+            viewModelFactory: self.viewModelFactory
+        )
         let window = MenuPopoverWindow(
             contentView: navigationCoordinator.view
         )
