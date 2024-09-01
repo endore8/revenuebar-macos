@@ -41,6 +41,9 @@
 		F0FD1FA22C849A620038FB60 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FA12C849A620038FB60 /* Project.swift */; };
 		F0FD1FA52C84A1DF0038FB60 /* ProjectsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FA42C84A1DF0038FB60 /* ProjectsStorage.swift */; };
 		F0FD1FA82C84A31A0038FB60 /* KeyValueStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FA72C84A31A0038FB60 /* KeyValueStorageKeys.swift */; };
+		F0FD1FB02C84C86F0038FB60 /* ProjectFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FAF2C84C86F0038FB60 /* ProjectFetcher.swift */; };
+		F0FD1FB22C84DB070038FB60 /* ProjectMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FB12C84DB070038FB60 /* ProjectMetrics.swift */; };
+		F0FD1FB42C84E06D0038FB60 /* Codable+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FB32C84E06D0038FB60 /* Codable+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,6 +94,9 @@
 		F0FD1FA12C849A620038FB60 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		F0FD1FA42C84A1DF0038FB60 /* ProjectsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsStorage.swift; sourceTree = "<group>"; };
 		F0FD1FA72C84A31A0038FB60 /* KeyValueStorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorageKeys.swift; sourceTree = "<group>"; };
+		F0FD1FAF2C84C86F0038FB60 /* ProjectFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFetcher.swift; sourceTree = "<group>"; };
+		F0FD1FB12C84DB070038FB60 /* ProjectMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMetrics.swift; sourceTree = "<group>"; };
+		F0FD1FB32C84E06D0038FB60 /* Codable+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,7 +258,7 @@
 				F0FD1F992C843F940038FB60 /* Factories */,
 				F0FD1F5D2C836C670038FB60 /* MenuBar */,
 				F0FD1F5E2C836C6E0038FB60 /* MenuPopover */,
-				F0FD1FA02C849A4F0038FB60 /* Model */,
+				F0FD1FAE2C84C8410038FB60 /* Project */,
 				F0FD1FA62C84A30E0038FB60 /* Storage */,
 			);
 			path = Domain;
@@ -271,6 +277,7 @@
 			children = (
 				F0FD1F762C837A3D0038FB60 /* Bool+Convenience.swift */,
 				F0FD1F8E2C8389F60038FB60 /* CGRect+Convenience.swift */,
+				F0FD1FB32C84E06D0038FB60 /* Codable+Convenience.swift */,
 				F0FD1F722C837A000038FB60 /* Double+Convenience.swift */,
 				F0FD1F742C837A170038FB60 /* Int+Convenience.swift */,
 				F0FD1F782C837B9F0038FB60 /* NSButton+Convenience.swift */,
@@ -321,21 +328,24 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
-		F0FD1FA02C849A4F0038FB60 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F0FD1FA12C849A620038FB60 /* Project.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		F0FD1FA62C84A30E0038FB60 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
 				F0FD1FA72C84A31A0038FB60 /* KeyValueStorageKeys.swift */,
-				F0FD1FA42C84A1DF0038FB60 /* ProjectsStorage.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		F0FD1FAE2C84C8410038FB60 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1FA12C849A620038FB60 /* Project.swift */,
+				F0FD1FAF2C84C86F0038FB60 /* ProjectFetcher.swift */,
+				F0FD1FB12C84DB070038FB60 /* ProjectMetrics.swift */,
+				F0FD1FA42C84A1DF0038FB60 /* ProjectsStorage.swift */,
+			);
+			name = Project;
+			path = ../Project;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,13 +429,16 @@
 				F0FD1F6E2C8379070038FB60 /* StaticString+Convenience.swift in Sources */,
 				F0FD1F892C8382010038FB60 /* EventMonitor.swift in Sources */,
 				F0FD1F9F2C84404D0038FB60 /* PreferencesViewModel.swift in Sources */,
+				F0FD1FB22C84DB070038FB60 /* ProjectMetrics.swift in Sources */,
 				F0FD1F752C837A170038FB60 /* Int+Convenience.swift in Sources */,
 				F0FD1F502C83693E0038FB60 /* DashboardView.swift in Sources */,
 				F0FD1FA82C84A31A0038FB60 /* KeyValueStorageKeys.swift in Sources */,
 				F0FD1FA52C84A1DF0038FB60 /* ProjectsStorage.swift in Sources */,
+				F0FD1FB02C84C86F0038FB60 /* ProjectFetcher.swift in Sources */,
 				F0FD1F542C8369580038FB60 /* PreferencesView.swift in Sources */,
 				F0FD1F912C838F1B0038FB60 /* MenuPopoverView.swift in Sources */,
 				F0FD1F9B2C843F9E0038FB60 /* ViewModelFactory.swift in Sources */,
+				F0FD1FB42C84E06D0038FB60 /* Codable+Convenience.swift in Sources */,
 				F0FD1F772C837A3D0038FB60 /* Bool+Convenience.swift in Sources */,
 				F0FD1F602C836F400038FB60 /* main.swift in Sources */,
 				F0FD1F7C2C837BC50038FB60 /* Closures.swift in Sources */,

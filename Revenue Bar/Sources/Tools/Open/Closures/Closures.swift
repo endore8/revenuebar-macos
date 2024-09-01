@@ -8,4 +8,5 @@
 import Foundation
 
 typealias TypeClosure<T> = (T) -> Void
+typealias TypeResultClosure<T> = (Result<T, Error>) -> Void
 typealias VoidClosure = () -> Void
