@@ -26,7 +26,7 @@ struct ProjectsStorage: ProjectsStorageType {
     func add(project: Project) {
         let storedProjects = self.keyValueStorage[KeyValueStorageKeys.projects] ?? []
         guard
-            !storedProjects.contains(project)
+            !storedProjects.contains(where: { $0.id == project.id })
         else { return }
         self.keyValueStorage[KeyValueStorageKeys.projects] = storedProjects + [project]
         if storedProjects.isEmpty {
@@ -38,7 +38,7 @@ struct ProjectsStorage: ProjectsStorageType {
         guard
             let storedProjects = self.keyValueStorage[KeyValueStorageKeys.projects]
         else { return }
-        let updatedProjects = storedProjects.filter({ $0 != project }).nilIfEmpty
+        let updatedProjects = storedProjects.filter({ $0.id != project.id }).nilIfEmpty
         self.keyValueStorage[KeyValueStorageKeys.projects] = updatedProjects
         if updatedProjects.isNil {
             // TODO: notify
