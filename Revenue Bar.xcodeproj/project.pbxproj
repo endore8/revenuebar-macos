@@ -39,6 +39,8 @@
 		F0FD1F9D2C8440250038FB60 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F9C2C8440250038FB60 /* DashboardViewModel.swift */; };
 		F0FD1F9F2C84404D0038FB60 /* PreferencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F9E2C84404D0038FB60 /* PreferencesViewModel.swift */; };
 		F0FD1FA22C849A620038FB60 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FA12C849A620038FB60 /* Project.swift */; };
+		F0FD1FA52C84A1DF0038FB60 /* ProjectsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FA42C84A1DF0038FB60 /* ProjectsStorage.swift */; };
+		F0FD1FA82C84A31A0038FB60 /* KeyValueStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FA72C84A31A0038FB60 /* KeyValueStorageKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,6 +89,8 @@
 		F0FD1F9C2C8440250038FB60 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		F0FD1F9E2C84404D0038FB60 /* PreferencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewModel.swift; sourceTree = "<group>"; };
 		F0FD1FA12C849A620038FB60 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		F0FD1FA42C84A1DF0038FB60 /* ProjectsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsStorage.swift; sourceTree = "<group>"; };
+		F0FD1FA72C84A31A0038FB60 /* KeyValueStorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorageKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +253,7 @@
 				F0FD1F5D2C836C670038FB60 /* MenuBar */,
 				F0FD1F5E2C836C6E0038FB60 /* MenuPopover */,
 				F0FD1FA02C849A4F0038FB60 /* Model */,
+				F0FD1FA62C84A30E0038FB60 /* Storage */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -322,6 +327,15 @@
 				F0FD1FA12C849A620038FB60 /* Project.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F0FD1FA62C84A30E0038FB60 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				F0FD1FA72C84A31A0038FB60 /* KeyValueStorageKeys.swift */,
+				F0FD1FA42C84A1DF0038FB60 /* ProjectsStorage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +421,8 @@
 				F0FD1F9F2C84404D0038FB60 /* PreferencesViewModel.swift in Sources */,
 				F0FD1F752C837A170038FB60 /* Int+Convenience.swift in Sources */,
 				F0FD1F502C83693E0038FB60 /* DashboardView.swift in Sources */,
+				F0FD1FA82C84A31A0038FB60 /* KeyValueStorageKeys.swift in Sources */,
+				F0FD1FA52C84A1DF0038FB60 /* ProjectsStorage.swift in Sources */,
 				F0FD1F542C8369580038FB60 /* PreferencesView.swift in Sources */,
 				F0FD1F912C838F1B0038FB60 /* MenuPopoverView.swift in Sources */,
 				F0FD1F9B2C843F9E0038FB60 /* ViewModelFactory.swift in Sources */,
