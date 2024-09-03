@@ -8,7 +8,9 @@
 import Foundation
 
 struct Project: Codable {
-    let id: String
+    typealias ID = String
+    
+    let id: ID
     let key: String
     let name: String
 }

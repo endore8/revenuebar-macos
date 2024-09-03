@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F050EC9B2C8737EF00E0C328 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9A2C8737EF00E0C328 /* String+Convenience.swift */; };
 		F050EC9E2C873C1000E0C328 /* asyncOnMainThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9D2C873C1000E0C328 /* asyncOnMainThread.swift */; };
+		F050ECA02C87405400E0C328 /* ProjectMetricsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9F2C87405400E0C328 /* ProjectMetricsStorage.swift */; };
 		F0FD1F3D2C8365730038FB60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FD1F3C2C8365730038FB60 /* Assets.xcassets */; };
 		F0FD1F502C83693E0038FB60 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F4F2C83693E0038FB60 /* DashboardView.swift */; };
 		F0FD1F522C83694F0038FB60 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F512C83694F0038FB60 /* AuthView.swift */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		F050EC9A2C8737EF00E0C328 /* String+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
 		F050EC9D2C873C1000E0C328 /* asyncOnMainThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asyncOnMainThread.swift; sourceTree = "<group>"; };
+		F050EC9F2C87405400E0C328 /* ProjectMetricsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMetricsStorage.swift; sourceTree = "<group>"; };
 		F0FD1F352C8365720038FB60 /* Revenue Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Revenue Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FD1F3C2C8365730038FB60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0FD1F412C8365730038FB60 /* RevenueBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RevenueBar.entitlements; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				F0FD1FAF2C84C86F0038FB60 /* ProjectFetcher.swift */,
 				F0FD1FB12C84DB070038FB60 /* ProjectMetrics.swift */,
 				F0FD1FA42C84A1DF0038FB60 /* ProjectsStorage.swift */,
+				F050EC9F2C87405400E0C328 /* ProjectMetricsStorage.swift */,
 			);
 			name = Project;
 			path = ../Project;
@@ -471,6 +474,7 @@
 				F0FD1F6B2C8378D30038FB60 /* KeyValueStorage.swift in Sources */,
 				F0FD1FA22C849A620038FB60 /* Project.swift in Sources */,
 				F0FD1F572C836ADA0038FB60 /* Dependencies.swift in Sources */,
+				F050ECA02C87405400E0C328 /* ProjectMetricsStorage.swift in Sources */,
 				F0FD1F592C836B050038FB60 /* MenuBarController.swift in Sources */,
 				F0FD1F982C843F410038FB60 /* AuthViewModel.swift in Sources */,
 				F0FD1F5B2C836B6A0038FB60 /* MenuPopoverController.swift in Sources */,

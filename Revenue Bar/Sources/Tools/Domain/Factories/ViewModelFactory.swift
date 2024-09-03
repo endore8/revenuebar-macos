@@ -16,6 +16,7 @@ protocol ViewModelFactoryType {
 struct ViewModelFactory: ViewModelFactoryType {
     
     let projectFetcher: ProjectFetcherType
+    let projectMetricsStorage: ProjectMetricsStorageType
     let projectsStorage: ProjectsStorageType
     
     // MARK: - ViewModelFactoryType
@@ -23,6 +24,7 @@ struct ViewModelFactory: ViewModelFactoryType {
     func makeAuthViewModel() -> AuthViewModel {
         AuthViewModel(
             projectFetcher: self.projectFetcher,
+            projectMetricsStorage: self.projectMetricsStorage,
             projectsStorage: self.projectsStorage
         )
     }

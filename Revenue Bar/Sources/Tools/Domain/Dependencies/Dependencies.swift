@@ -20,11 +20,13 @@ struct Dependencies {
         let projectFetcher = ProjectFetcher(
             session: .shared
         )
+        let projectMetricsStorage = ProjectMetricsStorage()
         let projectsStorage = ProjectsStorage(
             keyValueStorage: securedKeyValueStorage
         )
         let viewModelFactory = ViewModelFactory(
             projectFetcher: projectFetcher,
+            projectMetricsStorage: projectMetricsStorage,
             projectsStorage: projectsStorage
         )
         

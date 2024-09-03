@@ -12,12 +12,15 @@ import SwiftUI
 final class AuthViewModel {
     
     let projectFetcher: ProjectFetcherType
+    let projectMetricsStorage: ProjectMetricsStorageType
     let projectsStorage: ProjectsStorageType
     
     init(projectFetcher: ProjectFetcherType,
+         projectMetricsStorage: ProjectMetricsStorageType,
          projectsStorage: ProjectsStorageType) {
         
         self.projectFetcher = projectFetcher
+        self.projectMetricsStorage = projectMetricsStorage
         self.projectsStorage = projectsStorage
     }
     
@@ -56,6 +59,7 @@ final class AuthViewModel {
         switch result {
         case .success(let fetch): 
             self.projectsStorage.add(project: fetch.project)
+            self.projectMetricsStorage.set(metrics: fetch.metrics, for: fetch.project.id)
             self.isAuthorizing = false
             self.isAuthorized = true
         case .failure(let error):
