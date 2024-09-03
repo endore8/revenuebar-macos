@@ -17,6 +17,10 @@ struct FooterView: View {
     
     let accessory: Accessory
     
+    init(accessory: Accessory = .none) {
+        self.accessory = accessory
+    }
+    
     var body: some View {
         HStack(alignment: .center) {
             self.accessoryView

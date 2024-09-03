@@ -10,7 +10,10 @@ import SwiftUI
 struct PreferencesView: View {
     
     var body: some View {
-        Text("Preferences")
+        VStack {
+            Text("Preferences")
+            FooterView()
+        }
     }
     
     @Environment(PreferencesViewModel.self)

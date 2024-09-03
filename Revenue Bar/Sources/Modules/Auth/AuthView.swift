@@ -24,6 +24,7 @@ struct AuthView: View {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
             }
+            FooterView()
         }
         .disabled(self.viewModel.isAuthorizing || self.viewModel.isAuthorized)
         .onChange(of: self.key) { _, newValue in
