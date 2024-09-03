@@ -83,7 +83,7 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     }
     
     private func showPreferences() {
-        let viewModel = PreferencesViewModel()
+        let viewModel = self.viewModelFactory.makePreferencesViewModel()
         let view = PreferencesView(
             onDismiss: self.showDashboard
         )

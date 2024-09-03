@@ -34,6 +34,8 @@ struct ViewModelFactory: ViewModelFactoryType {
     }
     
     func makePreferencesViewModel() -> PreferencesViewModel {
-        PreferencesViewModel()
+        PreferencesViewModel(
+            projectsStorage: self.projectsStorage
+        )
     }
 }

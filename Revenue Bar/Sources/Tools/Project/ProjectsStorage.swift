@@ -10,7 +10,7 @@ import Foundation
 protocol ProjectsStorageType {
     var projects: [Project]? { get }
     func add(project: Project)
-    func remove(project: Project)
+    func remove(projectId: Project.ID)
 }
 
 struct ProjectsStorage: ProjectsStorageType {
@@ -34,11 +34,11 @@ struct ProjectsStorage: ProjectsStorageType {
         }
     }
     
-    func remove(project: Project) {
+    func remove(projectId: Project.ID) {
         guard
             let storedProjects = self.keyValueStorage[KeyValueStorageKeys.projects]
         else { return }
-        let updatedProjects = storedProjects.filter({ $0.id != project.id }).nilIfEmpty
+        let updatedProjects = storedProjects.filter({ $0.id != projectId }).nilIfEmpty
         self.keyValueStorage[KeyValueStorageKeys.projects] = updatedProjects
         if updatedProjects.isNil {
             // TODO: notify
