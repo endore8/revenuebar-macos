@@ -15,10 +15,16 @@ protocol ViewModelFactoryType {
 
 struct ViewModelFactory: ViewModelFactoryType {
     
+    let projectFetcher: ProjectFetcherType
+    let projectsStorage: ProjectsStorageType
+    
     // MARK: - ViewModelFactoryType
     
     func makeAuthViewModel() -> AuthViewModel {
-        AuthViewModel()
+        AuthViewModel(
+            projectFetcher: self.projectFetcher,
+            projectsStorage: self.projectsStorage
+        )
     }
     
     func makeDashboardViewModel() -> DashboardViewModel {

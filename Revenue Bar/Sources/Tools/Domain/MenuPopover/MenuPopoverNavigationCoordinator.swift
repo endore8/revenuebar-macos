@@ -40,9 +40,11 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     }
     
     private func showAuth() {
-        let viewModel = AuthViewModel()
-        let view = AuthView()
-            .environment(viewModel)
+        let viewModel = self.viewModelFactory.makeAuthViewModel()
+        let view = AuthView(
+            onDone: self.showDashboard
+        )
+        .environment(viewModel)
         self.navigationView.show(
             view: view
         )

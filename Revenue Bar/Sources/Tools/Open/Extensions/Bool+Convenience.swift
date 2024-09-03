@@ -12,4 +12,8 @@ extension Bool {
     var asString: String {
         "\(self)"
     }
+    
+    var not: Bool {
+        !self
+    }
 }

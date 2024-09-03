@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import KeychainAccess
 
 struct Dependencies {
     
@@ -14,7 +15,18 @@ struct Dependencies {
     
     init() {
         
-        let viewModelFactory = ViewModelFactory()
+        let securedKeyValueStorage = Keychain()
+        
+        let projectFetcher = ProjectFetcher(
+            session: .shared
+        )
+        let projectsStorage = ProjectsStorage(
+            keyValueStorage: securedKeyValueStorage
+        )
+        let viewModelFactory = ViewModelFactory(
+            projectFetcher: projectFetcher,
+            projectsStorage: projectsStorage
+        )
         
         let menuBarController = MenuBarController()
         let menuPopoverController = MenuPopoverController(
