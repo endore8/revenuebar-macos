@@ -37,5 +37,6 @@ final class MenuPopoverView: BaseNSView {
         self.addSubview(view) {
             $0.edges.equalToSuperview()
         }
+        self.view = view
     }
 }
