@@ -32,6 +32,7 @@ struct Dependencies {
         
         let menuBarController = MenuBarController()
         let menuPopoverController = MenuPopoverController(
+            projectsStorage: projectsStorage,
             viewModelFactory: viewModelFactory
         )
         

@@ -14,9 +14,13 @@ protocol MenuPopoverControllerType {
 
 final class MenuPopoverController: MenuPopoverControllerType {
     
+    let projectsStorage: ProjectsStorageType
     let viewModelFactory: ViewModelFactoryType
     
-    init(viewModelFactory: ViewModelFactoryType) {
+    init(projectsStorage: ProjectsStorageType,
+         viewModelFactory: ViewModelFactoryType) {
+        
+        self.projectsStorage = projectsStorage
         self.viewModelFactory = viewModelFactory
     }
     
@@ -47,6 +51,7 @@ final class MenuPopoverController: MenuPopoverControllerType {
             }
         }
         let navigationCoordinator = MenuPopoverNavigationCoordinator(
+            projectsStorage: self.projectsStorage,
             viewModelFactory: self.viewModelFactory
         )
         let window = MenuPopoverWindow(
