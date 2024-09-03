@@ -9,10 +9,12 @@ import SwiftUI
   
 struct AuthView: View {
     
+    let onDismiss: VoidClosure
     let onDone: VoidClosure
     
     var body: some View {
         VStack {
+            HeaderView(onDismiss: self.onDismiss)
             Text("Enter secret key")
             TextField("Secret key", text: self.$key)
             Button("Continue", action: self.continue)

@@ -52,7 +52,8 @@ final class MenuPopoverController: MenuPopoverControllerType {
         }
         let navigationCoordinator = MenuPopoverNavigationCoordinator(
             projectsStorage: self.projectsStorage,
-            viewModelFactory: self.viewModelFactory
+            viewModelFactory: self.viewModelFactory,
+            onDismiss: { [weak self] in self?.hide() }
         )
         let window = MenuPopoverWindow(
             contentView: navigationCoordinator.view

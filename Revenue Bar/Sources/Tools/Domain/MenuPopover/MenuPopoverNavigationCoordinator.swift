@@ -16,12 +16,15 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     
     let projectsStorage: ProjectsStorageType
     let viewModelFactory: ViewModelFactoryType
-    
+    let onDismiss: VoidClosure
+
     init(projectsStorage: ProjectsStorageType,
-         viewModelFactory: ViewModelFactoryType) {
+         viewModelFactory: ViewModelFactoryType,
+         onDismiss: @escaping VoidClosure) {
         
         self.projectsStorage = projectsStorage
         self.viewModelFactory = viewModelFactory
+        self.onDismiss = onDismiss
         
         self.navigationView = MenuPopoverView()
         
@@ -50,12 +53,22 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     private func showAuth() {
         let viewModel = self.viewModelFactory.makeAuthViewModel()
         let view = AuthView(
+            onDismiss: self.dismissAuth,
             onDone: self.showDashboard
         )
         .environment(viewModel)
         self.navigationView.show(
             view: view
         )
+    }
+    
+    private func dismissAuth() {
+        if self.projectsStorage.projects.isNotNil {
+            self.showDashboard()
+        }
+        else {
+            self.onDismiss()
+        }
     }
     
     private func showDashboard() {
@@ -71,8 +84,10 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     
     private func showPreferences() {
         let viewModel = PreferencesViewModel()
-        let view = PreferencesView()
-            .environment(viewModel)
+        let view = PreferencesView(
+            onDismiss: self.showDashboard
+        )
+        .environment(viewModel)
         self.navigationView.show(
             view: view
         )

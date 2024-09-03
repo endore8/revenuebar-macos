@@ -9,8 +9,11 @@ import SwiftUI
 
 struct PreferencesView: View {
     
+    let onDismiss: VoidClosure
+    
     var body: some View {
         VStack {
+            HeaderView(onDismiss: self.onDismiss)
             Text("Preferences")
             FooterView()
         }
