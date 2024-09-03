@@ -10,7 +10,10 @@ import SwiftUI
 struct DashboardView: View {
     
     var body: some View {
-        Text("Dashboard")
+        VStack {
+            Text("Dashboard")
+            FooterView(accessory: .refresh(text: "Now", onRefresh: {}))
+        }
     }
     
     @Environment(DashboardViewModel.self)
