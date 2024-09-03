@@ -41,9 +41,8 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     
     private func showAuth() {
         let viewModel = AuthViewModel()
-        let view = AuthView(
-            viewModel: viewModel
-        )
+        let view = AuthView()
+            .environment(viewModel)
         self.navigationView.show(
             view: view
         )
@@ -51,9 +50,8 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     
     private func showDashboard() {
         let viewModel = DashboardViewModel()
-        let view = DashboardView(
-            viewModel: viewModel
-        )
+        let view = DashboardView()
+            .environment(viewModel)
         self.navigationView.show(
             view: view
         )
@@ -61,9 +59,8 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     
     private func showPreferences() {
         let viewModel = PreferencesViewModel()
-        let view = PreferencesView(
-            viewModel: viewModel
-        )
+        let view = PreferencesView()
+            .environment(viewModel)
         self.navigationView.show(
             view: view
         )

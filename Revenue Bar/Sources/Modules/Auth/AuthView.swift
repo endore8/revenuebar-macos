@@ -9,9 +9,10 @@ import SwiftUI
   
 struct AuthView: View {
     
-    var viewModel: AuthViewModel
-    
     var body: some View {
         Text("Auth")
     }
+    
+    @Environment(AuthViewModel.self)
+    private var viewModel
 }

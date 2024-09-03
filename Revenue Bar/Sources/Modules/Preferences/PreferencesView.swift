@@ -9,9 +9,10 @@ import SwiftUI
 
 struct PreferencesView: View {
     
-    var viewModel: PreferencesViewModel
-    
     var body: some View {
         Text("Preferences")
     }
+    
+    @Environment(PreferencesViewModel.self)
+    private var viewModel
 }

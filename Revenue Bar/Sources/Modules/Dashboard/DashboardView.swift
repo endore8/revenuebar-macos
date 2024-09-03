@@ -9,9 +9,10 @@ import SwiftUI
 
 struct DashboardView: View {
     
-    var viewModel: DashboardViewModel
-    
     var body: some View {
         Text("Dashboard")
     }
+    
+    @Environment(DashboardViewModel.self)
+    var viewModel
 }
