@@ -15,10 +15,19 @@ struct FooterView: View {
         case none
     }
     
-    let accessory: Accessory
+    struct Option {
+        let title: String
+        let onAction: VoidClosure
+    }
     
-    init(accessory: Accessory = .none) {
+    let accessory: Accessory
+    let options: [Option]
+    
+    init(accessory: Accessory = .none,
+         options: [Option] = []) {
+        
         self.accessory = accessory
+        self.options = options
     }
     
     var body: some View {
@@ -59,6 +68,9 @@ struct FooterView: View {
                 .symbolRenderingMode(.palette)
                 .foregroundStyle(.primary),
             content: {
+                ForEach(self.options, id: \.title) { option in
+                    Button(option.title, action: option.onAction)
+                }
                 Button("Quit", action: self.quit)
             }
         )

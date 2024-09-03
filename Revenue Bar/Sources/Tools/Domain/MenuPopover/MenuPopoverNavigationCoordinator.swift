@@ -60,8 +60,10 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     
     private func showDashboard() {
         let viewModel = DashboardViewModel()
-        let view = DashboardView()
-            .environment(viewModel)
+        let view = DashboardView(
+            onShowPreferences: self.showPreferences
+        )
+        .environment(viewModel)
         self.navigationView.show(
             view: view
         )

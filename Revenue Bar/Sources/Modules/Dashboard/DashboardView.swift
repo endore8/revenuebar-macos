@@ -9,10 +9,20 @@ import SwiftUI
 
 struct DashboardView: View {
     
+    let onShowPreferences: VoidClosure
+    
     var body: some View {
         VStack {
             Text("Dashboard")
-            FooterView(accessory: .refresh(text: "Now", onRefresh: {}))
+            FooterView(
+                accessory: .refresh(text: "Now", onRefresh: {}),
+                options: [
+                    FooterView.Option(
+                        title: "Preferences",
+                        onAction: self.onShowPreferences
+                    )
+                ]
+            )
         }
     }
     
