@@ -406,8 +406,8 @@
 				F0FD1FA12C849A620038FB60 /* Project.swift */,
 				F0FD1FAF2C84C86F0038FB60 /* ProjectFetcher.swift */,
 				F0FD1FB12C84DB070038FB60 /* ProjectMetrics.swift */,
-				F0FD1FA42C84A1DF0038FB60 /* ProjectsStorage.swift */,
 				F050EC9F2C87405400E0C328 /* ProjectMetricsStorage.swift */,
+				F0FD1FA42C84A1DF0038FB60 /* ProjectsStorage.swift */,
 			);
 			name = Project;
 			path = ../Project;
