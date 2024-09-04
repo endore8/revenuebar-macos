@@ -32,7 +32,6 @@ struct PreferencesView: View {
             }
             FooterView()
         }
-        .background(.background.secondary)
     }
     
     @Environment(PreferencesViewModel.self)

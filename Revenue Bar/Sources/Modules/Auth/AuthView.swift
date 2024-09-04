@@ -28,7 +28,6 @@ struct AuthView: View {
             }
             FooterView()
         }
-        .background(.background.secondary)
         .disabled(self.viewModel.isAuthorizing || self.viewModel.isAuthorized)
         .onChange(of: self.key) { _, newValue in
             self.viewModel.update(key: newValue)

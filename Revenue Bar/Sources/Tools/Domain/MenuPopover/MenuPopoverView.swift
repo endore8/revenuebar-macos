@@ -13,29 +13,50 @@ final class MenuPopoverView: BaseNSView {
     override init() {
         super.init()
         
-        self.layer?.cornerRadius = .CornerRadius.ten
+        self.addSubview(self.containerView) {
+            $0.top.leading.trailing.equalToSuperview()
+        }
+    }
+    
+    override func updateLayer() {
+        super.updateLayer()
+        
+        self.containerView.layer?.backgroundColor = NSColor.menupopoverBackground.cgColor
     }
     
     func show<Content>(view: Content) where Content: View {
         self.show(
             view: NSHostingView(
-                rootView: ZStack {
-                    Color.clear // TODO: Maybe can be removed when content views are resizible.
-                    view
-                }
+                rootView: view
             )
         )
     }
     
     // MARK: - Private
     
-    private var view: NSView?
+    private let containerView: BaseNSView = .init().configure {
+        $0.layer?.cornerRadius = .CornerRadius.eight
+    }
     
     private func show(view: NSView) {
-        self.view?.removeFromSuperview()
-        self.addSubview(view) {
-            $0.top.leading.trailing.equalToSuperview()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        if self.containerView.subviews.isEmpty {
+            self.containerView.addSubview(view) {
+                $0.edges.equalToSuperview()
+            }
         }
-        self.view = view
+        else {
+            NSAnimationContext.runAnimationGroup { context in
+                context.allowsImplicitAnimation = true
+                context.duration = 0.2
+                self.containerView.subviews.forEach {
+                    $0.removeFromSuperview()
+                }
+                self.containerView.addSubview(view) {
+                    $0.edges.equalToSuperview()
+                }
+                self.containerView.layoutSubtreeIfNeeded()
+            }
+        }
     }
 }

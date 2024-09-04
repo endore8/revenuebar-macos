@@ -38,7 +38,6 @@ struct DashboardView: View {
                 ]
             )
         }
-        .background(.background.secondary)
     }
     
     @ViewBuilder
