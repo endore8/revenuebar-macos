@@ -9,12 +9,18 @@ import SwiftUI
 
 struct PreferencesView: View {
     
+    let onAddProject: VoidClosure
     let onDismiss: VoidClosure
     
     var body: some View {
         VStack {
             HeaderView(onDismiss: self.onDismiss)
-            Text("Projects")
+            HStack {
+                Text("Projects")
+                Button(action: self.onAddProject) {
+                    Image(systemName: "plus.circle")
+                }
+            }
             ForEach(self.viewModel.projects, id: \.id) { project in
                 self.projectView(project: project)
             }
