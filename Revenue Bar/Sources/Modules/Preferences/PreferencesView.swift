@@ -25,25 +25,52 @@ struct PreferencesView: View {
                 }
             }
             ForEach(self.viewModel.projects, id: \.id) { project in
-                self.projectView(project: project)
+                PreferencesProjectView(
+                    project: project,
+                    onRemove: self.viewModel.remove(projectId:)
+                )
             }
             FooterView()
         }
         .background(.background.secondary)
     }
     
-    @ViewBuilder
-    private func projectView(project: Project) -> some View {
+    @Environment(PreferencesViewModel.self)
+    private var viewModel
+}
+
+struct PreferencesProjectView: View {
+    
+    let project: Project
+    let onRemove: TypeClosure<Project.ID>
+    
+    var body: some View {
         HStack {
             Text(project.name)
             Spacer()
-            Button(action: { self.viewModel.remove(projectId: project.id) }) {
+            Button(action: { self.isDeletionConfirmationDialogPresented = true }) {
                 Image(systemName: "minus.circle")
             }
             .buttonStyle(PlainButtonStyle())
         }
+        .confirmationDialog(
+            "Remove project \(project.name)?",
+            isPresented: self.$isDeletionConfirmationDialogPresented,
+            titleVisibility: .visible) {
+                Button(
+                    "Confirm",
+                    action: {
+                        self.onRemove(self.project.id)
+                    }
+                )
+                Button(
+                    "Cancel",
+                    role: .cancel,
+                    action: {}
+                )
+            }
     }
     
-    @Environment(PreferencesViewModel.self)
-    private var viewModel
+    @State
+    private var isDeletionConfirmationDialogPresented: Bool = false
 }
