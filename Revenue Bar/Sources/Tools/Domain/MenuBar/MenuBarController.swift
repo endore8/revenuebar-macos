@@ -24,11 +24,11 @@ final class MenuBarController: MenuBarControllerType {
         
         let view = NSImageView()
         view.image = NSImage(
-            systemSymbolName: "dollarsign.circle.fill",
+            systemSymbolName: "dollarsign.square.fill",
             accessibilityDescription: nil
         )
         view.symbolConfiguration = NSImage.SymbolConfiguration(
-            pointSize: 18,
+            pointSize: 19,
             weight: .medium
         )
         
