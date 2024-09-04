@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Project: Codable {
+struct Project: Codable, Equatable {
     typealias ID = String
     
     let id: ID

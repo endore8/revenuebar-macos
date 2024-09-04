@@ -27,14 +27,17 @@ struct ProjectsStorage: ProjectsStorageType {
     let onChange: VoidNotifier = .init()
 
     func add(project: Project) {
-        let storedProjects = self.keyValueStorage[KeyValueStorageKeys.projects] ?? []
-        guard
-            !storedProjects.contains(where: { $0.id == project.id })
-        else { return }
-        self.keyValueStorage[KeyValueStorageKeys.projects] = storedProjects + [project]
-        self.onChange.send()
-        if storedProjects.isEmpty {
-            // TODO: notify
+        var storedProjects = self.keyValueStorage[KeyValueStorageKeys.projects] ?? []
+        if let index = storedProjects.firstIndex(where: { $0.id == project.id }) {
+            if project != storedProjects[index] {
+                storedProjects[index] = project
+                self.keyValueStorage[KeyValueStorageKeys.projects] = storedProjects
+                self.onChange.send()
+            }
+        }
+        else {
+            self.keyValueStorage[KeyValueStorageKeys.projects] = storedProjects + [project]
+            self.onChange.send()
         }
     }
     
@@ -45,9 +48,6 @@ struct ProjectsStorage: ProjectsStorageType {
         let updatedProjects = storedProjects.filter({ $0.id != projectId }).nilIfEmpty
         self.keyValueStorage[KeyValueStorageKeys.projects] = updatedProjects
         self.onChange.send()
-        if updatedProjects.isNil {
-            // TODO: notify
-        }
     }
 }
 
