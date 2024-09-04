@@ -12,8 +12,9 @@ struct DashboardView: View {
     let onShowPreferences: VoidClosure
     
     var body: some View {
-        VStack {
-            LazyVGrid(columns: self.columns) {
+        VStack(spacing: .Spacing.none) {
+            LazyVGrid(columns: self.columns,
+                      spacing: .Spacing.inner) {
                 if let projectMetrics = self.viewModel.projectMetrics {
                     ForEach(projectMetrics.metrics) { projectMetric in
                         self.projectMetricView(projectMetric: projectMetric)
@@ -26,6 +27,7 @@ struct DashboardView: View {
                     .redacted(reason: .placeholder)
                 }
             }
+            .padding(.Padding.inner)
             FooterView(
                 accessory: .refresh(text: "Now", onRefresh: {}),
                 options: [
@@ -41,22 +43,24 @@ struct DashboardView: View {
     
     @ViewBuilder
     private func projectMetricView(projectMetric: ProjectMetrics.Metric) -> some View {
-        VStack {
+        VStack(alignment: .leading,
+               spacing: .Spacing.small) {
             Text(projectMetric.name)
                 .font(.subheadline)
+                .fontWeight(.semibold)
                 .foregroundStyle(.primary)
+                .frame(maxWidth: .infinity, alignment: .leading)
             Text(projectMetric.value.asString)
-                .font(.title3)
+                .font(.title)
+                .fontWeight(.semibold)
                 .foregroundStyle(.primary)
             Text(projectMetric.description)
-                .font(.footnote)
+                .font(.subheadline)
                 .foregroundStyle(.secondary)
-            if let date = projectMetric.updatedAt {
-                Text(date.ISO8601Format())
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
-            }
         }
+        .padding(.Padding.inner)
+        .background(.background.secondary)
+        .cornerRadius(.CornerRadius.ten)
     }
     
     private let columns: [GridItem] = Array(
