@@ -30,7 +30,9 @@ struct ViewModelFactory: ViewModelFactoryType {
     }
     
     func makeDashboardViewModel() -> DashboardViewModel {
-        DashboardViewModel()
+        DashboardViewModel(
+            projectMetricsStorage: self.projectMetricsStorage
+        )
     }
     
     func makePreferencesViewModel() -> PreferencesViewModel {

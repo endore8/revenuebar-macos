@@ -84,13 +84,14 @@ struct ProjectFetcher: ProjectFetcherType {
             case .success(let data):
                 do {
                     let object = try RCProjectMetricsOverview.with(jsonData: data)
-                    let acceptableMetrics = ["active_trials", "active_subscriptions", "mrr", "revenue", "new_customers", "active_users", "num_tx_last_28_days"]
+                    let acceptableMetrics = ["active_trials", "active_subscriptions", "mrr", "revenue", "new_customers", "active_users"]
                     let metrics = object.metrics
                         .filter { metric in
                             acceptableMetrics.contains(metric.id)
                         }
                         .map { metric in
                             ProjectMetrics.Metric(
+                                id: metric.id,
                                 name: metric.name,
                                 description: metric.description,
                                 value: metric.value,
@@ -142,7 +143,7 @@ private struct RCProjectMetricsOverview: Codable {
     struct Metric: Codable {
         let id: String
         let name: String
-        let description: String?
+        let description: String
         let lastUpdatedAt: Date?
         let value: Int
     }

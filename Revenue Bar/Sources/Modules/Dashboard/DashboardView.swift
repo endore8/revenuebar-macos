@@ -13,7 +13,19 @@ struct DashboardView: View {
     
     var body: some View {
         VStack {
-            Text("Dashboard")
+            LazyVGrid(columns: self.columns) {
+                if let projectMetrics = self.viewModel.projectMetrics {
+                    ForEach(projectMetrics.metrics) { projectMetric in
+                        self.projectMetricView(projectMetric: projectMetric)
+                    }
+                }
+                else {
+                    ForEach(self.viewModel.placeholderProjectMetrics.metrics) { projectMetric in
+                        self.projectMetricView(projectMetric: projectMetric)
+                    }
+                    .redacted(reason: .placeholder)
+                }
+            }
             FooterView(
                 accessory: .refresh(text: "Now", onRefresh: {}),
                 options: [
@@ -26,6 +38,34 @@ struct DashboardView: View {
         }
     }
     
+    @ViewBuilder
+    private func projectMetricView(projectMetric: ProjectMetrics.Metric) -> some View {
+        VStack {
+            Text(projectMetric.name)
+                .font(.subheadline)
+                .foregroundStyle(.primary)
+            Text(projectMetric.value.asString)
+                .font(.title3)
+                .foregroundStyle(.primary)
+            Text(projectMetric.description)
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+            if let date = projectMetric.updatedAt {
+                Text(date.ISO8601Format())
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+    
+    private let columns: [GridItem] = Array(
+        repeating: GridItem(
+            .flexible(),
+            spacing: .Spacing.inner
+        ),
+        count: 2
+    )
+    
     @Environment(DashboardViewModel.self)
-    var viewModel
+    private var viewModel
 }

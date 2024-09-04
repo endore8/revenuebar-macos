@@ -10,9 +10,10 @@ import Foundation
 struct ProjectMetrics {
     let metrics: [Metric]
     
-    struct Metric {
+    struct Metric: Identifiable {
+        let id: String
         let name: String
-        let description: String?
+        let description: String
         let value: Int
         let updatedAt: Date?
     }
