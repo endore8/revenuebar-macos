@@ -31,10 +31,16 @@ struct FooterView: View {
     }
     
     var body: some View {
-        HStack(alignment: .center) {
-            self.accessoryView
-            Spacer()
-            self.optionsView
+        VStack(spacing: .Spacing.none) {
+            Divider()
+            HStack(alignment: .center,
+                   spacing: .Spacing.inner) {
+                self.accessoryView
+                Spacer()
+                self.optionsView
+            }
+            .padding(.horizontal, .Padding.inner)
+            .padding(.vertical, .Padding.compact)
         }
     }
     
@@ -42,7 +48,8 @@ struct FooterView: View {
     private var accessoryView: some View {
         switch self.accessory {
         case .refresh(let text, let onRefresh):
-            HStack(alignment: .center) {
+            HStack(alignment: .center,
+                   spacing: .Spacing.compact) {
                 Button(action: onRefresh) {
                     Image(systemName: "arrow.clockwise")
                 }
@@ -50,7 +57,8 @@ struct FooterView: View {
                 Text(text)
             }
             .font(.subheadline)
-            .foregroundStyle(.primary)
+            .fontWeight(.medium)
+            .foregroundStyle(.secondary)
         case .loading:
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle())
@@ -63,10 +71,13 @@ struct FooterView: View {
     @ViewBuilder
     private var optionsView: some View {
         MenuButton(
-            label: Image(systemName: "ellipsis")
-                .font(.subheadline)
-                .symbolRenderingMode(.palette)
-                .foregroundStyle(.primary),
+            label: ZStack {
+                Image(systemName: "ellipsis")
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.secondary)
+                    .symbolRenderingMode(.palette)
+            }.padding(.Padding.small).background(.background.secondary),
             content: {
                 ForEach(self.options, id: \.title) { option in
                     Button(option.title, action: option.onAction)
@@ -74,7 +85,7 @@ struct FooterView: View {
                 Button("Quit", action: self.quit)
             }
         )
-        .frame(maxWidth: 24, alignment: .trailing)
+        .frame(width: 20)
         .menuButtonStyle(BorderlessButtonMenuButtonStyle())
     }
     
