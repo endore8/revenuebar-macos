@@ -9,8 +9,10 @@ import Foundation
 import Cocoa
 
 let delegate = AppDelegate()
+let menu = AppMenu()
 
 let application = NSApplication.shared
 application.delegate = delegate
+application.menu = menu
 
 _ = NSApplicationMain(CommandLine.argc, CommandLine.unsafeArgv)
