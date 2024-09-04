@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F02631D32C88423100C8F1A3 /* Notifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631D22C88423100C8F1A3 /* Notifiers.swift */; };
 		F050EC9B2C8737EF00E0C328 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9A2C8737EF00E0C328 /* String+Convenience.swift */; };
 		F050EC9E2C873C1000E0C328 /* asyncOnMainThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9D2C873C1000E0C328 /* asyncOnMainThread.swift */; };
 		F050ECA02C87405400E0C328 /* ProjectMetricsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9F2C87405400E0C328 /* ProjectMetricsStorage.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F02631D22C88423100C8F1A3 /* Notifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifiers.swift; sourceTree = "<group>"; };
 		F050EC9A2C8737EF00E0C328 /* String+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
 		F050EC9D2C873C1000E0C328 /* asyncOnMainThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asyncOnMainThread.swift; sourceTree = "<group>"; };
 		F050EC9F2C87405400E0C328 /* ProjectMetricsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMetricsStorage.swift; sourceTree = "<group>"; };
@@ -132,6 +134,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F02631D12C88421D00C8F1A3 /* Notifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F02631D22C88423100C8F1A3 /* Notifiers.swift */,
+			);
+			path = Notifiers;
+			sourceTree = "<group>";
+		};
 		F050EC9C2C873C0500E0C328 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +306,7 @@
 				F0FD1F6C2C8378FF0038FB60 /* Extensions */,
 				F050EC9C2C873C0500E0C328 /* Functions */,
 				F0FD1F692C8378A90038FB60 /* KeyValueStorage */,
+				F02631D12C88421D00C8F1A3 /* Notifiers */,
 				F0FD1F922C8394C00038FB60 /* Views */,
 			);
 			path = Open;
@@ -508,6 +519,7 @@
 				F0D7665F2C875EB9006907B8 /* FooterView.swift in Sources */,
 				F0FD1F622C836F500038FB60 /* AppDelegate.swift in Sources */,
 				F050EC9E2C873C1000E0C328 /* asyncOnMainThread.swift in Sources */,
+				F02631D32C88423100C8F1A3 /* Notifiers.swift in Sources */,
 				F0FD1F792C837B9F0038FB60 /* NSButton+Convenience.swift in Sources */,
 				F0FD1F8F2C8389F60038FB60 /* CGRect+Convenience.swift in Sources */,
 				F0FD1F522C83694F0038FB60 /* AuthView.swift in Sources */,
