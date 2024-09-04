@@ -22,7 +22,12 @@ final class ProjectMetricsStorage: ProjectMetricsStorageType {
     
     // MARK: - ProjectMetricsStorageType
     
-    var summary: ProjectMetrics?
+    var summary: ProjectMetrics? {
+        var metrics = self.storage.values.asArray
+        guard metrics.isEmpty.not else { return nil }
+        let first = metrics.removeFirst()
+        return metrics.reduce(first, { $0.summing(with: $1) })
+    }
     
     let onChange: VoidNotifier = .init()
     
@@ -43,4 +48,27 @@ final class ProjectMetricsStorage: ProjectMetricsStorageType {
     // MARK: - Private
     
     private var storage: [Project.ID: ProjectMetrics] = [:]
+}
+
+extension ProjectMetrics {
+    
+    fileprivate func summing(with another: ProjectMetrics) -> ProjectMetrics {
+        ProjectMetrics(
+            metrics: self.metrics.map { metric in
+                ProjectMetrics.Metric(
+                    id: metric.id,
+                    name: metric.name,
+                    description: metric.description,
+                    value: metric.value + (another.value(for: metric.id) ?? .zero),
+                    updatedAt: metric.updatedAt
+                )
+            }
+        )
+    }
+    
+    private func value(for projectMetricId: ProjectMetrics.Metric.ID) -> Int? {
+        self.metrics
+            .first(where: { $0.id == projectMetricId })?
+            .value
+    }
 }
