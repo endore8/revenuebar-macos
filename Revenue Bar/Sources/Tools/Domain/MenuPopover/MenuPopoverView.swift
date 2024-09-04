@@ -34,7 +34,7 @@ final class MenuPopoverView: BaseNSView {
     private func show(view: NSView) {
         self.view?.removeFromSuperview()
         self.addSubview(view) {
-            $0.edges.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
         }
         self.view = view
     }

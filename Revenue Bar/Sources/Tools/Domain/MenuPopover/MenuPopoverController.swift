@@ -63,8 +63,8 @@ final class MenuPopoverController: MenuPopoverControllerType {
         )
         
         let screenFrame = targetScreen.visibleFrame
-        let width: CGFloat = 400
-        let height: CGFloat = 500
+        let width: CGFloat = 360
+        let height: CGFloat = screenFrame.height
         let x = min(
             targetFrame.center.x - width / 2,
             screenFrame.maxX - width
