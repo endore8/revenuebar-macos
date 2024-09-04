@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F02631D32C88423100C8F1A3 /* Notifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631D22C88423100C8F1A3 /* Notifiers.swift */; };
+		F02631D52C8854D500C8F1A3 /* ProjectFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631D42C8854D500C8F1A3 /* ProjectFetcherService.swift */; };
+		F02631D72C885F7C00C8F1A3 /* Result+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631D62C885F7C00C8F1A3 /* Result+Convenience.swift */; };
 		F050EC9B2C8737EF00E0C328 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9A2C8737EF00E0C328 /* String+Convenience.swift */; };
 		F050EC9E2C873C1000E0C328 /* asyncOnMainThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9D2C873C1000E0C328 /* asyncOnMainThread.swift */; };
 		F050ECA02C87405400E0C328 /* ProjectMetricsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9F2C87405400E0C328 /* ProjectMetricsStorage.swift */; };
@@ -72,6 +74,8 @@
 
 /* Begin PBXFileReference section */
 		F02631D22C88423100C8F1A3 /* Notifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifiers.swift; sourceTree = "<group>"; };
+		F02631D42C8854D500C8F1A3 /* ProjectFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFetcherService.swift; sourceTree = "<group>"; };
+		F02631D62C885F7C00C8F1A3 /* Result+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Convenience.swift"; sourceTree = "<group>"; };
 		F050EC9A2C8737EF00E0C328 /* String+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
 		F050EC9D2C873C1000E0C328 /* asyncOnMainThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asyncOnMainThread.swift; sourceTree = "<group>"; };
 		F050EC9F2C87405400E0C328 /* ProjectMetricsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMetricsStorage.swift; sourceTree = "<group>"; };
@@ -347,6 +351,7 @@
 				F0FD1F802C837D280038FB60 /* NSView+Convenience.swift */,
 				F0FD1F8A2C8386230038FB60 /* Numeric+Convenience.swift */,
 				F0FD1F8C2C8389C10038FB60 /* Optional+Convenience.swift */,
+				F02631D62C885F7C00C8F1A3 /* Result+Convenience.swift */,
 				F0FD1F6D2C8379070038FB60 /* StaticString+Convenience.swift */,
 				F050EC9A2C8737EF00E0C328 /* String+Convenience.swift */,
 			);
@@ -405,6 +410,7 @@
 			children = (
 				F0FD1FA12C849A620038FB60 /* Project.swift */,
 				F0FD1FAF2C84C86F0038FB60 /* ProjectFetcher.swift */,
+				F02631D42C8854D500C8F1A3 /* ProjectFetcherService.swift */,
 				F0FD1FB12C84DB070038FB60 /* ProjectMetrics.swift */,
 				F050EC9F2C87405400E0C328 /* ProjectMetricsStorage.swift */,
 				F0FD1FA42C84A1DF0038FB60 /* ProjectsStorage.swift */,
@@ -516,6 +522,7 @@
 				F0FD1F642C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift in Sources */,
 				F0FD1F662C8370EF0038FB60 /* MenuPopoverWindow.swift in Sources */,
 				F0D7666A2C877E7C006907B8 /* BorderWidth.swift in Sources */,
+				F02631D52C8854D500C8F1A3 /* ProjectFetcherService.swift in Sources */,
 				F0D7665F2C875EB9006907B8 /* FooterView.swift in Sources */,
 				F0FD1F622C836F500038FB60 /* AppDelegate.swift in Sources */,
 				F050EC9E2C873C1000E0C328 /* asyncOnMainThread.swift in Sources */,
@@ -529,6 +536,7 @@
 				F0D766642C877CD4006907B8 /* Padding.swift in Sources */,
 				F0FD1FA22C849A620038FB60 /* Project.swift in Sources */,
 				F0FD1F572C836ADA0038FB60 /* Dependencies.swift in Sources */,
+				F02631D72C885F7C00C8F1A3 /* Result+Convenience.swift in Sources */,
 				F050ECA02C87405400E0C328 /* ProjectMetricsStorage.swift in Sources */,
 				F0FD1F592C836B050038FB60 /* MenuBarController.swift in Sources */,
 				F0FD1F982C843F410038FB60 /* AuthViewModel.swift in Sources */,

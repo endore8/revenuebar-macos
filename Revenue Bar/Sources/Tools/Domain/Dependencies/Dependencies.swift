@@ -10,6 +10,7 @@ import KeychainAccess
 
 struct Dependencies {
     
+    let projectFetcherService: ProjectFetcherServiceType
     let menuBarController: MenuBarControllerType
     let menuPopoverController: MenuPopoverControllerType
     
@@ -24,6 +25,11 @@ struct Dependencies {
         let projectsStorage = ProjectsStorage(
             keyValueStorage: securedKeyValueStorage
         )
+        let projectFetcherService = ProjectFetcherService(
+            projectFetcher: projectFetcher,
+            projectMetricsStorage: projectMetricsStorage,
+            projectsStorage: projectsStorage
+        )
         let viewModelFactory = ViewModelFactory(
             projectFetcher: projectFetcher,
             projectMetricsStorage: projectMetricsStorage,
@@ -36,6 +42,7 @@ struct Dependencies {
             viewModelFactory: viewModelFactory
         )
         
+        self.projectFetcherService = projectFetcherService
         self.menuBarController = menuBarController
         self.menuPopoverController = menuPopoverController
     }
