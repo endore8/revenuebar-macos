@@ -13,8 +13,7 @@ final class MenuPopoverView: BaseNSView {
     override init() {
         super.init()
         
-        self.layer?.backgroundColor = NSColor.blue.cgColor
-        self.layer?.cornerRadius = 10
+        self.layer?.cornerRadius = .CornerRadius.ten
     }
     
     func show<Content>(view: Content) where Content: View {

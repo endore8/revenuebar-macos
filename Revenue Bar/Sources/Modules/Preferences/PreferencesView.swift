@@ -29,6 +29,7 @@ struct PreferencesView: View {
             }
             FooterView()
         }
+        .background(.background.secondary)
     }
     
     @ViewBuilder
