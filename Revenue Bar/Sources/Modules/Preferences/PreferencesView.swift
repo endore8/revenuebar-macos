@@ -14,7 +14,10 @@ struct PreferencesView: View {
     
     var body: some View {
         VStack {
-            HeaderView(onDismiss: self.onDismiss)
+            HeaderView(
+                title: "Preferences",
+                onDismiss: self.onDismiss
+            )
             HStack {
                 Text("Projects")
                 Button(action: self.onAddProject) {
