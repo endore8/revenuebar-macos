@@ -20,19 +20,24 @@ struct HeaderView: View {
     }
     
     var body: some View {
-        HStack {
-            if let title {
-                Text(title)
-                    .font(.title3)
-                    .foregroundStyle(.primary)
+        VStack(spacing: .Spacing.none) {
+            HStack(spacing: .Spacing.none) {
+                if let title {
+                    Text(title)
+                        .font(.title3)
+                        .foregroundStyle(.secondary)
+                }
+                Spacer()
+                Button(action: self.onDismiss) {
+                    Image(systemName: "xmark")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .foregroundStyle(.secondary)
+                }
+                .buttonStyle(PlainButtonStyle())
             }
-            Spacer()
-            Button(action: self.onDismiss) {
-                Image(systemName: "xmark")
-                    .font(.title3)
-                    .foregroundStyle(.primary)
-            }
-            .buttonStyle(PlainButtonStyle())
+            .padding(.Padding.inner)
+            Divider()
         }
     }
 }
