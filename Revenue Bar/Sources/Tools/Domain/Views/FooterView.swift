@@ -11,6 +11,7 @@ struct FooterView: View {
     
     enum Accessory {
         case refresh(text: String, onRefresh: VoidClosure)
+        case error(text: String, onRetry: VoidClosure)
         case loading
         case none
     }
@@ -52,17 +53,33 @@ struct FooterView: View {
                    spacing: .Spacing.compact) {
                 Button(action: onRefresh) {
                     Image(systemName: "arrow.clockwise")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
                 }
                 .buttonStyle(PlainButtonStyle())
                 Text(text)
+                    .font(.footnote)
             }
-            .font(.subheadline)
-            .fontWeight(.medium)
+            .foregroundStyle(.secondary)
+        case .error(let text, let onRetry):
+            HStack(alignment: .center,
+                   spacing: .Spacing.compact) {
+                Button(action: onRetry) {
+                    Image(systemName: "arrow.clockwise")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                }
+                .buttonStyle(PlainButtonStyle())
+                Text(text)
+                    .font(.footnote)
+                    .foregroundStyle(.orange)
+            }
             .foregroundStyle(.secondary)
         case .loading:
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle())
                 .controlSize(.small)
+                .frame(height: .zero)
         case .none:
             EmptyView()
         }

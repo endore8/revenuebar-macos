@@ -32,6 +32,7 @@ struct Dependencies {
         )
         let viewModelFactory = ViewModelFactory(
             projectFetcher: projectFetcher,
+            projectFetcherService: projectFetcherService,
             projectMetricsStorage: projectMetricsStorage,
             projectsStorage: projectsStorage
         )

@@ -29,7 +29,7 @@ struct DashboardView: View {
             }
             .padding(.Padding.inner)
             FooterView(
-                accessory: .refresh(text: "Now", onRefresh: {}),
+                accessory: self.footerAccessory,
                 options: [
                     FooterView.Option(
                         title: "Preferences",
@@ -69,6 +69,21 @@ struct DashboardView: View {
         ),
         count: 2
     )
+    
+    private var footerAccessory: FooterView.Accessory {
+        if self.viewModel.isReloading {
+            .loading
+        }
+        else if self.viewModel.lastReloadError.isNotNil {
+            .error(text: "Couldn't reload", onRetry: self.viewModel.reload)
+        }
+        else if let date = self.viewModel.lastReloadDate {
+            .refresh(text: date.relativeToNowFormatted, onRefresh: self.viewModel.reload)
+        }
+        else {
+            .none
+        }
+    }
     
     @Environment(DashboardViewModel.self)
     private var viewModel

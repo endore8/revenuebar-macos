@@ -10,19 +10,37 @@ import Foundation
 @Observable
 final class DashboardViewModel {
     
+    let projectFetcherService: ProjectFetcherServiceType
     let projectMetricsStorage: ProjectMetricsStorageType
     
-    init(projectMetricsStorage: ProjectMetricsStorageType) {
+    init(projectFetcherService: ProjectFetcherServiceType,
+         projectMetricsStorage: ProjectMetricsStorageType) {
+        
+        self.projectFetcherService = projectFetcherService
         self.projectMetricsStorage = projectMetricsStorage
         
-        self.update()
+        self.updateProjectMetrics()
+        self.updateServiceState()
         
-        self.projectMetricsStorage.onChange
+        self.projectFetcherService
+            .onChange
             .sink { [weak self] in
-                self?.update()
+                self?.updateServiceState()
             }
-            .store(in: &self.notitifierContainer)
+            .store(in: &self.notitifiersContainer)
+            
+        self.projectMetricsStorage
+            .onChange
+            .sink { [weak self] in
+                self?.updateProjectMetrics()
+            }
+            .store(in: &self.notitifiersContainer)
     }
+    
+    private(set) var isReloading: Bool = false
+    
+    private(set) var lastReloadDate: Date? = nil
+    private(set) var lastReloadError: Error? = nil
     
     private(set) var projectMetrics: ProjectMetrics?
     
@@ -40,11 +58,21 @@ final class DashboardViewModel {
         )
     }
     
+    func reload() {
+        self.projectFetcherService.reload()
+    }
+    
     // MARK: - Private
     
-    private var notitifierContainer: NotifierContainer?
+    private var notitifiersContainer: NotifiersContainer = .init()
     
-    private func update() {
+    private func updateProjectMetrics() {
         self.projectMetrics = self.projectMetricsStorage.summary
+    }
+    
+    private func updateServiceState() {
+        self.isReloading = self.projectFetcherService.isReloading
+        self.lastReloadDate = self.projectFetcherService.lastReloadDate
+        self.lastReloadError = self.projectFetcherService.lastReloadError
     }
 }

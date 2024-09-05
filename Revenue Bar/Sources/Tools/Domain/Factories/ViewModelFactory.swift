@@ -16,6 +16,7 @@ protocol ViewModelFactoryType {
 struct ViewModelFactory: ViewModelFactoryType {
     
     let projectFetcher: ProjectFetcherType
+    let projectFetcherService: ProjectFetcherServiceType
     let projectMetricsStorage: ProjectMetricsStorageType
     let projectsStorage: ProjectsStorageType
     
@@ -31,6 +32,7 @@ struct ViewModelFactory: ViewModelFactoryType {
     
     func makeDashboardViewModel() -> DashboardViewModel {
         DashboardViewModel(
+            projectFetcherService: self.projectFetcherService,
             projectMetricsStorage: self.projectMetricsStorage
         )
     }
