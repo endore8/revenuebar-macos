@@ -35,25 +35,72 @@ struct AuthView: View {
     @ViewBuilder
     private var contentView: some View {
         VStack(alignment: .leading, 
-               spacing: .Spacing.none) {
-            Text("Enter secret key")
-            TextField(
-                "Secret key",
-                text: self.$key,
-                onCommit: self.continue
-            )
-            .font(.title3)
-            .foregroundStyle(.primary)
-            .padding(.Padding.compact)
-            .textFieldStyle(PlainTextFieldStyle())
-            Button("Continue", action: self.continue)
-                .disabled(self.viewModel.canContinue.not)
-            if let error = self.viewModel.error {
-                Text(error)
+               spacing: .Spacing.outer) {
+            VStack(alignment: .leading,
+                   spacing: .Spacing.inner) {
+                HStack(alignment: .top,
+                       spacing: .Spacing.inner) {
+                    Image(systemName: "1.square")
+                        .font(.title)
+                        .foregroundStyle(.primary)
+                    Text("Go to the **[RevenueCat](https://app.revenuecat.com)** and open your project's settings.")
+                        .font(.title3)
+                        .foregroundStyle(.primary)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(.zero)
+                }
+                HStack(alignment: .top,
+                       spacing: .Spacing.inner) {
+                    Image(systemName: "2.square")
+                        .font(.title)
+                        .foregroundStyle(.primary)
+                    Text("Select **API Keys** in the **Project Settings** panel.")
+                        .font(.title3)
+                        .foregroundStyle(.primary)
+                        .multilineTextAlignment(.leading)
+                }
             }
-            if self.viewModel.isAuthorizing {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
+            VStack(alignment: .leading,
+                   spacing: .Spacing.inner) {
+                TextField(
+                    "Secret key",
+                    text: self.$key,
+                    onCommit: self.continue
+                )
+                .font(.title3)
+                .foregroundStyle(.primary)
+                .padding(.Padding.compact)
+                .textFieldStyle(PlainTextFieldStyle())
+                HStack(spacing: .Spacing.inner) {
+                    Text("Couldn't fetch data")
+                        .font(.body)
+                        .foregroundStyle(.orange)
+                        .hidden(if: self.viewModel.error.isNil)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Button(action: self.continue) {
+                        HStack(alignment: .center,
+                               spacing: .Spacing.small) {
+                            Text("Continue")
+                            ZStack {
+                                Image(systemName: "chevron.right")
+                                    .hidden(if: self.viewModel.isAuthorizing)
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle())
+                                    .controlSize(.small)
+                                    .hidden(if: self.viewModel.isAuthorizing.not)
+                                    .frame(height: .zero)
+                            }
+                        }
+                               .font(.body)
+                               .fontWeight(.medium)
+                               .foregroundStyle(.primary)
+                               .padding(.horizontal, .Padding.compact)
+                               .padding(.vertical, .Padding.small)
+                               .background(.background.secondary)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .disabled(self.viewModel.canContinue.not || self.viewModel.isAuthorizing)
+                }
             }
         }
         .padding(.Padding.inner)
