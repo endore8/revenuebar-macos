@@ -44,32 +44,21 @@ struct PreferencesProjectView: View {
     let onRemove: TypeClosure<Project.ID>
     
     var body: some View {
-        HStack {
+        HStack(alignment: .center,
+               spacing: .Spacing.inner) {
             Text(project.name)
             Spacer()
-            Button(action: { self.isDeletionConfirmationDialogPresented = true }) {
+            Button(action: { self.onRemove(self.project.id) }) {
                 Image(systemName: "minus.circle")
             }
             .buttonStyle(PlainButtonStyle())
+            .hidden(if: self.isHovering.not)
         }
-        .confirmationDialog(
-            "Remove project \(project.name)?",
-            isPresented: self.$isDeletionConfirmationDialogPresented,
-            titleVisibility: .visible) {
-                Button(
-                    "Confirm",
-                    action: {
-                        self.onRemove(self.project.id)
-                    }
-                )
-                Button(
-                    "Cancel",
-                    role: .cancel,
-                    action: {}
-                )
-            }
+        .onHover {
+            self.isHovering = $0
+        }
     }
     
     @State
-    private var isDeletionConfirmationDialogPresented: Bool = false
+    private var isHovering: Bool = false
 }
