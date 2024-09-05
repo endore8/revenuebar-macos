@@ -29,6 +29,13 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
         self.navigationView = MenuPopoverView()
         
         self.showInitial()
+        
+        self.projectsStorage
+            .onChange
+            .sink { [weak self] in
+                self?.showAuthIfNeeded()
+            }
+            .store(in: &self.notifierContainer)
     }
     
     // MARK: - MenuPopoverNavigationCoordinatorType
@@ -40,6 +47,8 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     // MARK: - Private
     
     private let navigationView: MenuPopoverView
+    
+    private var notifierContainer: NotifierContainer?
     
     private func showInitial() {
         if self.projectsStorage.projects.isNotNil {
@@ -60,6 +69,12 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
         self.navigationView.show(
             view: view
         )
+    }
+    
+    private func showAuthIfNeeded() {
+        if self.projectsStorage.projects.isNil {
+            self.showAuth()
+        }
     }
     
     private func dismissAuth() {
