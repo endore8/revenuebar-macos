@@ -12,4 +12,11 @@ extension Int {
     var asString: String {
         "\(self)"
     }
+    
+    var decimalFormatted: String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let result = numberFormatter.string(from: NSNumber(value: self))
+        return result ?? self.asString
+    }
 }

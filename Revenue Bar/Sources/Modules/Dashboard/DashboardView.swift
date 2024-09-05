@@ -49,7 +49,7 @@ struct DashboardView: View {
                 .fontWeight(.semibold)
                 .foregroundStyle(.primary)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            Text(projectMetric.value.asString)
+            Text(projectMetric.valueFormatted)
                 .font(.title)
                 .fontWeight(.semibold)
                 .foregroundStyle(.primary)
@@ -72,4 +72,14 @@ struct DashboardView: View {
     
     @Environment(DashboardViewModel.self)
     private var viewModel
+}
+
+extension ProjectMetrics.Metric {
+    
+    fileprivate var valueFormatted: String {
+        switch self.id {
+        case "mrr", "revenue": "$" + self.value.decimalFormatted
+        default: self.value.decimalFormatted
+        }
+    }
 }
