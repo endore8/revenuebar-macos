@@ -38,6 +38,11 @@ struct DashboardView: View {
                 ]
             )
         }
+        .onAppear {
+            if self.viewModel.isReloading.not && self.viewModel.lastReloadError.isNotNil {
+                self.viewModel.reload()
+            }
+        }
     }
     
     @ViewBuilder
