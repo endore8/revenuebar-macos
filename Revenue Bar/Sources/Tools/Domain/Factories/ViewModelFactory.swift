@@ -15,6 +15,7 @@ protocol ViewModelFactoryType {
 
 struct ViewModelFactory: ViewModelFactoryType {
     
+    let openAtLoginHandler: OpenAtLoginHandler
     let projectFetcher: ProjectFetcherType
     let projectFetcherService: ProjectFetcherServiceType
     let projectMetricsStorage: ProjectMetricsStorageType
@@ -39,6 +40,7 @@ struct ViewModelFactory: ViewModelFactoryType {
     
     func makePreferencesViewModel() -> PreferencesViewModel {
         PreferencesViewModel(
+            openAtLoginHandler: self.openAtLoginHandler,
             projectsStorage: self.projectsStorage
         )
     }

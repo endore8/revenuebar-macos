@@ -21,10 +21,23 @@ struct PreferencesView: View {
             self.contentView
             FooterView()
         }
+        .task {
+            self.isOpenAtLogin = self.viewModel.isOpenAtLogin
+        }
     }
     
     @ViewBuilder
     private var contentView: some View {
+        VStack(spacing: .Spacing.inner) {
+            self.projectsView
+            Divider()
+            self.preferencesView
+        }
+        .padding(.Padding.inner)
+    }
+    
+    @ViewBuilder
+    private var projectsView: some View {
         VStack(spacing: .Spacing.none) {
             HStack(alignment: .center,
                    spacing: .Spacing.inner) {
@@ -49,9 +62,34 @@ struct PreferencesView: View {
                 )
             }
         }
-        .padding(.Padding.inner)
     }
     
+    @ViewBuilder
+    private var preferencesView: some View {
+        VStack(spacing: .Spacing.none) {
+            HStack(alignment: .center, 
+                   spacing: .Spacing.inner) {
+                Text("Open at login")
+                    .font(.body)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.primary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Toggle(isOn: self.$isOpenAtLogin) {
+                    Text(String.empty)
+                }
+                .labelsHidden()
+                .toggleStyle(.checkbox)
+                .onChange(of: self.isOpenAtLogin) { _, newValue in
+                    self.viewModel.isOpenAtLogin = newValue
+                }
+            }
+            .padding(.trailing, .Padding.small)
+        }
+    }
+    
+    @State 
+    private var isOpenAtLogin: Bool = false
+        
     @Environment(PreferencesViewModel.self)
     private var viewModel
 }

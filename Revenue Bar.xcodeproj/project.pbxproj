@@ -14,6 +14,7 @@
 		F02631DB2C88894F00C8F1A3 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631DA2C88894F00C8F1A3 /* AppMenu.swift */; };
 		F02631E52C89A96E00C8F1A3 /* Date+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631E42C89A96E00C8F1A3 /* Date+Convenience.swift */; };
 		F02631E82C89B19F00C8F1A3 /* HiddenIf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631E72C89B19F00C8F1A3 /* HiddenIf.swift */; };
+		F02631ED2C8A1A0D00C8F1A3 /* OpenAtLoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631EC2C8A1A0D00C8F1A3 /* OpenAtLoginHandler.swift */; };
 		F050EC9B2C8737EF00E0C328 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9A2C8737EF00E0C328 /* String+Convenience.swift */; };
 		F050EC9E2C873C1000E0C328 /* asyncOnMainThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9D2C873C1000E0C328 /* asyncOnMainThread.swift */; };
 		F050ECA02C87405400E0C328 /* ProjectMetricsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9F2C87405400E0C328 /* ProjectMetricsStorage.swift */; };
@@ -84,6 +85,7 @@
 		F02631DA2C88894F00C8F1A3 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
 		F02631E42C89A96E00C8F1A3 /* Date+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Convenience.swift"; sourceTree = "<group>"; };
 		F02631E72C89B19F00C8F1A3 /* HiddenIf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenIf.swift; sourceTree = "<group>"; };
+		F02631EC2C8A1A0D00C8F1A3 /* OpenAtLoginHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAtLoginHandler.swift; sourceTree = "<group>"; };
 		F050EC9A2C8737EF00E0C328 /* String+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
 		F050EC9D2C873C1000E0C328 /* asyncOnMainThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asyncOnMainThread.swift; sourceTree = "<group>"; };
 		F050EC9F2C87405400E0C328 /* ProjectMetricsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMetricsStorage.swift; sourceTree = "<group>"; };
@@ -160,6 +162,14 @@
 				F02631E72C89B19F00C8F1A3 /* HiddenIf.swift */,
 			);
 			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		F02631EB2C89FDCB00C8F1A3 /* OpenAtLogin */ = {
+			isa = PBXGroup;
+			children = (
+				F02631EC2C8A1A0D00C8F1A3 /* OpenAtLoginHandler.swift */,
+			);
+			path = OpenAtLogin;
 			sourceTree = "<group>";
 		};
 		F050EC9C2C873C0500E0C328 /* Functions */ = {
@@ -342,6 +352,7 @@
 				F0FD1F992C843F940038FB60 /* Factories */,
 				F0FD1F5D2C836C670038FB60 /* MenuBar */,
 				F0FD1F5E2C836C6E0038FB60 /* MenuPopover */,
+				F02631EB2C89FDCB00C8F1A3 /* OpenAtLogin */,
 				F0FD1FAE2C84C8410038FB60 /* Project */,
 				F0FD1FA62C84A30E0038FB60 /* Storage */,
 				F0D7665D2C875EAD006907B8 /* Views */,
@@ -542,6 +553,7 @@
 				F0FD1F732C837A000038FB60 /* Double+Convenience.swift in Sources */,
 				F0FD1F8D2C8389C10038FB60 /* Optional+Convenience.swift in Sources */,
 				F0FD1F642C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift in Sources */,
+				F02631ED2C8A1A0D00C8F1A3 /* OpenAtLoginHandler.swift in Sources */,
 				F0FD1F662C8370EF0038FB60 /* MenuPopoverWindow.swift in Sources */,
 				F0D7666A2C877E7C006907B8 /* BorderWidth.swift in Sources */,
 				F02631D52C8854D500C8F1A3 /* ProjectFetcherService.swift in Sources */,

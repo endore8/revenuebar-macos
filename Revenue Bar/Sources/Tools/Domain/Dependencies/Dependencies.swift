@@ -18,6 +18,10 @@ struct Dependencies {
         
         let securedKeyValueStorage = Keychain()
         
+        let openAtLoginHandler = OpenAtLoginHandler(
+            appService: .mainApp
+        )
+        
         let projectFetcher = ProjectFetcher(
             session: .shared
         )
@@ -31,6 +35,7 @@ struct Dependencies {
             projectsStorage: projectsStorage
         )
         let viewModelFactory = ViewModelFactory(
+            openAtLoginHandler: openAtLoginHandler,
             projectFetcher: projectFetcher,
             projectFetcherService: projectFetcherService,
             projectMetricsStorage: projectMetricsStorage,

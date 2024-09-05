@@ -13,19 +13,12 @@ struct AuthView: View {
     let onDone: VoidClosure
     
     var body: some View {
-        VStack {
-            HeaderView(onDismiss: self.onDismiss)
-            Text("Enter secret key")
-            TextField("Secret key", text: self.$key)
-            Button("Continue", action: self.continue)
-                .disabled(self.viewModel.canContinue.not)
-            if let error = self.viewModel.error {
-                Text(error)
-            }
-            if self.viewModel.isAuthorizing {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
-            }
+        VStack(spacing: .Spacing.none) {
+            HeaderView(
+                title: "Get Started",
+                onDismiss: self.onDismiss
+            )
+            self.contentView
             FooterView()
         }
         .disabled(self.viewModel.isAuthorizing || self.viewModel.isAuthorized)
@@ -37,6 +30,33 @@ struct AuthView: View {
                 self.onDone()
             }
         }
+    }
+    
+    @ViewBuilder
+    private var contentView: some View {
+        VStack(alignment: .leading, 
+               spacing: .Spacing.none) {
+            Text("Enter secret key")
+            TextField(
+                "Secret key",
+                text: self.$key,
+                onCommit: self.continue
+            )
+            .font(.title3)
+            .foregroundStyle(.primary)
+            .padding(.Padding.compact)
+            .textFieldStyle(PlainTextFieldStyle())
+            Button("Continue", action: self.continue)
+                .disabled(self.viewModel.canContinue.not)
+            if let error = self.viewModel.error {
+                Text(error)
+            }
+            if self.viewModel.isAuthorizing {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+            }
+        }
+        .padding(.Padding.inner)
     }
     
     @State
