@@ -63,8 +63,11 @@ struct DashboardView: View {
                 .foregroundStyle(.secondary)
         }
         .padding(.Padding.inner)
-        .background(.background.secondary)
-        .cornerRadius(.CornerRadius.ten)
+        .border(
+            .primary.opacity(.Opacity.separator),
+            width: .BorderWidth.thick,
+            cornerRadius: .CornerRadius.ten
+        )
     }
     
     private let columns: [GridItem] = Array(
