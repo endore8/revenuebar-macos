@@ -14,6 +14,9 @@ struct PreferencesView: View {
     
     var body: some View {
         VStack(spacing: .Spacing.none) {
+            if self.viewModel.isDemo {
+                DemoView()
+            }
             HeaderView(
                 title: "Preferences",
                 onDismiss: self.onDismiss

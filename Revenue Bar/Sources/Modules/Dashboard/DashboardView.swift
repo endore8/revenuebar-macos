@@ -13,6 +13,9 @@ struct DashboardView: View {
     
     var body: some View {
         VStack(spacing: .Spacing.none) {
+            if self.viewModel.isDemo {
+                DemoView()
+            }
             LazyVGrid(columns: self.columns,
                       spacing: .Spacing.inner) {
                 if let projectMetrics = self.viewModel.projectMetrics {

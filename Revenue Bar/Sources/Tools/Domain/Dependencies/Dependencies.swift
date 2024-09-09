@@ -48,6 +48,8 @@ struct Dependencies {
             viewModelFactory: viewModelFactory
         )
         
+        projectsStorage.clearDemoProjects()
+        
         self.projectFetcherService = projectFetcherService
         self.menuBarController = menuBarController
         self.menuPopoverController = menuPopoverController

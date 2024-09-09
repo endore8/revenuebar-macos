@@ -19,7 +19,12 @@ struct AuthView: View {
                 onDismiss: self.onDismiss
             )
             self.contentView
-            FooterView()
+            FooterView(
+                accessory: .action(
+                    title: "See demo",
+                    onAction: self.continueWithDemo
+                )
+            )
         }
         .disabled(self.viewModel.isAuthorizing || self.viewModel.isAuthorized)
         .onChange(of: self.key) { _, newValue in
@@ -114,5 +119,9 @@ struct AuthView: View {
     
     private func `continue`() {
         self.viewModel.authorize()
+    }
+    
+    private func continueWithDemo() {
+        self.viewModel.prepareDemo()
     }
 }

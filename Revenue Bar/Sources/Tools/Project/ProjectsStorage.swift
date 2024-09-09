@@ -9,9 +9,11 @@ import Foundation
 
 protocol ProjectsStorageType {
     var projects: [Project]? { get }
+    var isDemo: Bool { get }
     var onChange: VoidNotifier { get }
     func add(project: Project)
     func remove(projectId: Project.ID)
+    func clearDemoProjects()
 }
 
 struct ProjectsStorage: ProjectsStorageType {
@@ -22,6 +24,10 @@ struct ProjectsStorage: ProjectsStorageType {
     
     var projects: [Project]? {
         self.keyValueStorage[KeyValueStorageKeys.projects]
+    }
+    
+    var isDemo: Bool {
+        self.projects?.contains(where: { $0.isDemo }) ?? false
     }
     
     let onChange: VoidNotifier = .init()
@@ -48,6 +54,14 @@ struct ProjectsStorage: ProjectsStorageType {
         let updatedProjects = storedProjects.filter({ $0.id != projectId }).nilIfEmpty
         self.keyValueStorage[KeyValueStorageKeys.projects] = updatedProjects
         self.onChange.send()
+    }
+    
+    func clearDemoProjects() {
+        if let demoProjects = self.projects?.filter({ $0.isDemo }) {
+            demoProjects.forEach {
+                self.remove(projectId: $0.id)
+            }
+        }
     }
 }
 

@@ -47,7 +47,9 @@ final class MenuPopoverView: BaseNSView {
         $0.layer?.cornerRadius = .CornerRadius.ten
     }
     
-    private let containerView: BaseNSView = .init()
+    private let containerView: BaseNSView = .init().configure {
+        $0.layer?.cornerRadius = .CornerRadius.ten
+    }
     
     private func show(view: NSView) {
         view.translatesAutoresizingMaskIntoConstraints = false

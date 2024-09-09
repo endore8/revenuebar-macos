@@ -10,6 +10,7 @@ import SwiftUI
 struct FooterView: View {
     
     enum Accessory {
+        case action(title: String, onAction: VoidClosure)
         case refresh(text: String, onRefresh: VoidClosure)
         case error(text: String, onRetry: VoidClosure)
         case loading
@@ -48,6 +49,19 @@ struct FooterView: View {
     @ViewBuilder
     private var accessoryView: some View {
         switch self.accessory {
+        case .action(let title, let onAction):
+            Button(action: onAction) {
+                HStack(alignment: .center,
+                       spacing: .Spacing.compact) {
+                Text(title)
+                    .font(.footnote)
+                Image(systemName: "chevron.right")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                }
+            }
+            .buttonStyle(PlainButtonStyle())
+            .foregroundStyle(.secondary)
         case .refresh(let text, let onRefresh):
             HStack(alignment: .center,
                    spacing: .Spacing.compact) {

@@ -28,6 +28,8 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
         
         self.navigationView = MenuPopoverView()
         
+        self.projectsStorage.clearDemoProjects()
+        
         self.showInitial()
         
         self.projectsStorage

@@ -104,7 +104,7 @@ final class ProjectFetcherService: ProjectFetcherServiceType {
     }
     
     private func update() {
-        if self.projectsStorage.projects.isNotNil {
+        if self.projectsStorage.projects.isNotNil && self.projectsStorage.isDemo.not {
             let timer = DispatchSource.makeTimerSource()
             timer.setEventHandler { [weak self] in
                 self?.reload()

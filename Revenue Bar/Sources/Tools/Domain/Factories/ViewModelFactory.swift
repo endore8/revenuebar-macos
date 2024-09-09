@@ -34,13 +34,15 @@ struct ViewModelFactory: ViewModelFactoryType {
     func makeDashboardViewModel() -> DashboardViewModel {
         DashboardViewModel(
             projectFetcherService: self.projectFetcherService,
-            projectMetricsStorage: self.projectMetricsStorage
+            projectMetricsStorage: self.projectMetricsStorage,
+            projectsStorage: self.projectsStorage
         )
     }
     
     func makePreferencesViewModel() -> PreferencesViewModel {
         PreferencesViewModel(
             openAtLoginHandler: self.openAtLoginHandler,
+            projectMetricsStorage: self.projectMetricsStorage,
             projectsStorage: self.projectsStorage
         )
     }

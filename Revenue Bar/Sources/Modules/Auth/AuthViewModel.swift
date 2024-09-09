@@ -22,6 +22,9 @@ final class AuthViewModel {
         self.projectFetcher = projectFetcher
         self.projectMetricsStorage = projectMetricsStorage
         self.projectsStorage = projectsStorage
+        
+        self.projectsStorage.clearDemoProjects()
+        self.projectMetricsStorage.clearMetrics(for: Project.demoId)
     }
     
     private(set) var isAuthorizing: Bool = false
@@ -44,6 +47,13 @@ final class AuthViewModel {
                 self?.handleFetchResult(result)
             }
         }
+    }
+    
+    func prepareDemo() {
+        let project = Project.demo
+        self.projectsStorage.add(project: project)
+        self.projectMetricsStorage.set(metrics: .demo, for: project.id)
+        self.isAuthorized = true
     }
     
     func update(key: String) {

@@ -11,15 +11,22 @@ import Foundation
 final class PreferencesViewModel {
     
     let openAtLoginHandler: OpenAtLoginHandlerType
+    let projectMetricsStorage: ProjectMetricsStorageType
     let projectsStorage: ProjectsStorageType
     
     init(openAtLoginHandler: OpenAtLoginHandlerType,
+         projectMetricsStorage: ProjectMetricsStorageType,
          projectsStorage: ProjectsStorageType) {
         
         self.openAtLoginHandler = openAtLoginHandler
+        self.projectMetricsStorage = projectMetricsStorage
         self.projectsStorage = projectsStorage
         
         self.projects = self.projectsStorage.projects ?? []
+    }
+    
+    var isDemo: Bool {
+        self.projectsStorage.isDemo
     }
     
     private(set) var projects: [Project] = []
@@ -35,6 +42,7 @@ final class PreferencesViewModel {
     
     func remove(projectId: Project.ID) {
         self.projectsStorage.remove(projectId: projectId)
+        self.projectMetricsStorage.clearMetrics(for: projectId)
         self.projects = self.projectsStorage.projects ?? []
     }
 }

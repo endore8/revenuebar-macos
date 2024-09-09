@@ -12,12 +12,15 @@ final class DashboardViewModel {
     
     let projectFetcherService: ProjectFetcherServiceType
     let projectMetricsStorage: ProjectMetricsStorageType
-    
+    let projectsStorage: ProjectsStorageType
+
     init(projectFetcherService: ProjectFetcherServiceType,
-         projectMetricsStorage: ProjectMetricsStorageType) {
+         projectMetricsStorage: ProjectMetricsStorageType,
+         projectsStorage: ProjectsStorageType) {
         
         self.projectFetcherService = projectFetcherService
         self.projectMetricsStorage = projectMetricsStorage
+        self.projectsStorage = projectsStorage
         
         self.updateProjectMetrics()
         self.updateServiceState()
@@ -35,6 +38,10 @@ final class DashboardViewModel {
                 self?.updateProjectMetrics()
             }
             .store(in: &self.notitifiersContainer)
+    }
+    
+    var isDemo: Bool {
+        self.projectsStorage.isDemo
     }
     
     private(set) var isReloading: Bool = false

@@ -13,4 +13,21 @@ struct Project: Codable, Equatable {
     let id: ID
     let key: String
     let name: String
+    
+    var isDemo: Bool {
+        self.id == Project.demoId
+    }
+}
+
+extension Project {
+    
+    static let demoId: String = "demo"
+    
+    static var demo: Project {
+        Project(
+            id: self.demoId,
+            key: "demo",
+            name: "Demo"
+        )
+    }
 }
