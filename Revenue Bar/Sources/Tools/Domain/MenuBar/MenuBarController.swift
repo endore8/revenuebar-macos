@@ -38,6 +38,12 @@ final class MenuBarController: MenuBarControllerType {
             $0.bottom.lessThanOrEqualToSuperview().priority(.low)
             $0.centerY.equalToSuperview()
         }
+        
+        #if DEBUG
+        asyncOnMainThreadDelayed(delay: 0.4) { [weak self] in
+            self?.performActionHandler()
+        }
+        #endif
     }
     
     // MARK: - Private
