@@ -13,15 +13,21 @@ final class MenuPopoverView: BaseNSView {
     override init() {
         super.init()
         
-        self.addSubview(self.containerView) {
-            $0.top.leading.trailing.equalToSuperview()
-        }
+        self.addSubview(self.backgroundView)
+        self.addSubview(self.containerView)
     }
     
-    override func updateLayer() {
-        super.updateLayer()
+    override func updateConstraints() {
         
-        self.containerView.layer?.backgroundColor = NSColor.menupopoverBackground.cgColor
+        self.backgroundView.snp.updateConstraints {
+            $0.edges.equalTo(self.containerView)
+        }
+        
+        self.containerView.snp.updateConstraints {
+           $0.top.leading.trailing.equalToSuperview()
+        }
+        
+        super.updateConstraints()
     }
     
     func show<Content>(view: Content) where Content: View {
@@ -34,9 +40,14 @@ final class MenuPopoverView: BaseNSView {
     
     // MARK: - Private
     
-    private let containerView: BaseNSView = .init().configure {
-        $0.layer?.cornerRadius = .CornerRadius.eight
+    private let backgroundView: NSVisualEffectView = .init().configure {
+        $0.state = .active
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.wantsLayer = true
+        $0.layer?.cornerRadius = .CornerRadius.ten
     }
+    
+    private let containerView: BaseNSView = .init()
     
     private func show(view: NSView) {
         view.translatesAutoresizingMaskIntoConstraints = false
