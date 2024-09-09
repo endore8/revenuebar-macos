@@ -17,7 +17,11 @@ struct DemoView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .fixedSize(horizontal: false, vertical: true)
             Button(action: self.onQuit) {
-                Text("Quit")
+                HStack(spacing: .Spacing.compact) {
+                    Text("Quit")
+                    Image(systemName: "arrow.right.to.line")
+                        .fontWeight(.semibold)
+                }
             }
             .buttonStyle(PlainButtonStyle())
             .padding(.trailing, .Padding.compact)
