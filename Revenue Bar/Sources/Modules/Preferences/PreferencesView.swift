@@ -15,7 +15,7 @@ struct PreferencesView: View {
     var body: some View {
         VStack(spacing: .Spacing.none) {
             if self.viewModel.isDemo {
-                DemoView()
+                DemoView(onQuit: self.viewModel.quitDemo)
             }
             HeaderView(
                 title: "Preferences",

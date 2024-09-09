@@ -69,6 +69,11 @@ final class DashboardViewModel {
         self.projectFetcherService.reload()
     }
     
+    func quitDemo() {
+        self.projectsStorage.remove(projectId: Project.demoId)
+        self.projectMetricsStorage.clearMetrics(for: Project.demoId)
+    }
+    
     // MARK: - Private
     
     private var notitifiersContainer: NotifiersContainer = .init()

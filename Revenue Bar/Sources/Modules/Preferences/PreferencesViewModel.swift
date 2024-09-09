@@ -45,4 +45,8 @@ final class PreferencesViewModel {
         self.projectMetricsStorage.clearMetrics(for: projectId)
         self.projects = self.projectsStorage.projects ?? []
     }
+    
+    func quitDemo() {
+        self.remove(projectId: Project.demoId)
+    }
 }
