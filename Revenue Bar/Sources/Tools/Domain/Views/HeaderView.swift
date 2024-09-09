@@ -37,7 +37,7 @@ struct HeaderView: View {
                 .buttonStyle(PlainButtonStyle())
             }
             .padding(.Padding.inner)
-            Divider()
+            SeparatorView()
         }
     }
 }

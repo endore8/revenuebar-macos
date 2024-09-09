@@ -30,7 +30,7 @@ struct PreferencesView: View {
     private var contentView: some View {
         VStack(spacing: .Spacing.inner) {
             self.projectsView
-            Divider()
+            SeparatorView()
             self.preferencesView
         }
         .padding(.Padding.inner)

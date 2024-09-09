@@ -33,7 +33,7 @@ struct FooterView: View {
     
     var body: some View {
         VStack(spacing: .Spacing.none) {
-            Divider()
+            SeparatorView()
             HStack(alignment: .center,
                    spacing: .Spacing.inner) {
                 self.accessoryView
