@@ -108,7 +108,8 @@ struct AuthView: View {
                 }
             }
         }
-        .padding(.Padding.inner)
+        .padding(.horizontal, .Padding.inner)
+        .padding(.vertical, .Padding.middle)
     }
     
     @State

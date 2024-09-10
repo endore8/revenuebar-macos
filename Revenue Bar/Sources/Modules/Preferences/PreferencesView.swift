@@ -36,7 +36,8 @@ struct PreferencesView: View {
             SeparatorView()
             self.preferencesView
         }
-        .padding(.Padding.inner)
+        .padding(.horizontal, .Padding.inner)
+        .padding(.vertical, .Padding.middle)
     }
     
     @ViewBuilder

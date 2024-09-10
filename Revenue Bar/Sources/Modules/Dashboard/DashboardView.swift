@@ -30,7 +30,8 @@ struct DashboardView: View {
                     .redacted(reason: .placeholder)
                 }
             }
-            .padding(.Padding.inner)
+            .padding(.horizontal, .Padding.inner)
+            .padding(.vertical, .Padding.middle)
             FooterView(
                 accessory: self.footerAccessory,
                 options: [
