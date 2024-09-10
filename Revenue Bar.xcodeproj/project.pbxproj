@@ -21,6 +21,7 @@
 		F05A79B02C8F3E35003A53CD /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A79AF2C8F3E35003A53CD /* Border.swift */; };
 		F05A79B22C8F3F35003A53CD /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A79B12C8F3F35003A53CD /* SeparatorView.swift */; };
 		F05A79B42C8F4A80003A53CD /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A79B32C8F4A80003A53CD /* DemoView.swift */; };
+		F05A79B72C9025FD003A53CD /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = F05A79B62C9025FD003A53CD /* RevenueCat */; };
 		F0D7665F2C875EB9006907B8 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7665E2C875EB9006907B8 /* FooterView.swift */; };
 		F0D766622C877CB2006907B8 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D766612C877CB2006907B8 /* Spacing.swift */; };
 		F0D766642C877CD4006907B8 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D766632C877CD4006907B8 /* Padding.swift */; };
@@ -148,6 +149,7 @@
 			files = (
 				F0FD1F712C8379C90038FB60 /* KeychainAccess in Frameworks */,
 				F0FD1F862C837D830038FB60 /* SnapKit in Frameworks */,
+				F05A79B72C9025FD003A53CD /* RevenueCat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +481,7 @@
 			packageProductDependencies = (
 				F0FD1F702C8379C90038FB60 /* KeychainAccess */,
 				F0FD1F852C837D830038FB60 /* SnapKit */,
+				F05A79B62C9025FD003A53CD /* RevenueCat */,
 			);
 			productName = "Revenue Bar";
 			productReference = F0FD1F352C8365720038FB60 /* Revenue Bar.app */;
@@ -511,6 +514,7 @@
 			packageReferences = (
 				F0FD1F6F2C8379C90038FB60 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				F0FD1F7D2C837CD70038FB60 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F05A79B52C9025FD003A53CD /* XCRemoteSwiftPackageReference "purchases-ios" */,
 			);
 			productRefGroup = F0FD1F362C8365720038FB60 /* Products */;
 			projectDirPath = "";
@@ -800,6 +804,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F05A79B52C9025FD003A53CD /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.3.2;
+			};
+		};
 		F0FD1F6F2C8379C90038FB60 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
@@ -819,6 +831,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F05A79B62C9025FD003A53CD /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F05A79B52C9025FD003A53CD /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
+		};
 		F0FD1F702C8379C90038FB60 /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F0FD1F6F2C8379C90038FB60 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
