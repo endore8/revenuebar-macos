@@ -11,6 +11,7 @@ protocol ViewModelFactoryType {
     func makeAuthViewModel() -> AuthViewModel
     func makeDashboardViewModel() -> DashboardViewModel
     func makePreferencesViewModel() -> PreferencesViewModel
+    func makePurchaseViewModel() -> PurchaseProViewModel
 }
 
 struct ViewModelFactory: ViewModelFactoryType {
@@ -45,5 +46,9 @@ struct ViewModelFactory: ViewModelFactoryType {
             projectMetricsStorage: self.projectMetricsStorage,
             projectsStorage: self.projectsStorage
         )
+    }
+    
+    func makePurchaseViewModel() -> PurchaseProViewModel {
+        PurchaseProViewModel()
     }
 }

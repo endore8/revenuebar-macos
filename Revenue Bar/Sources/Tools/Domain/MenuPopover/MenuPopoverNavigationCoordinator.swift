@@ -15,14 +15,17 @@ protocol MenuPopoverNavigationCoordinatorType {
 final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorType {
     
     let projectsStorage: ProjectsStorageType
+    let proStatusProvider: ProStatusProviderType
     let viewModelFactory: ViewModelFactoryType
     let onDismiss: VoidClosure
 
     init(projectsStorage: ProjectsStorageType,
+         proStatusProvider: ProStatusProviderType,
          viewModelFactory: ViewModelFactoryType,
          onDismiss: @escaping VoidClosure) {
         
         self.projectsStorage = projectsStorage
+        self.proStatusProvider = proStatusProvider
         self.viewModelFactory = viewModelFactory
         self.onDismiss = onDismiss
         
@@ -79,6 +82,15 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
         }
     }
     
+    private func showAuthOrPro() {
+        if self.proStatusProvider.isPro {
+            self.showAuth()
+        }
+        else {
+            self.showPurchasePro()
+        }
+    }
+    
     private func dismissAuth() {
         if self.projectsStorage.projects.isNotNil {
             self.showDashboard()
@@ -102,8 +114,20 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     private func showPreferences() {
         let viewModel = self.viewModelFactory.makePreferencesViewModel()
         let view = PreferencesView(
-            onAddProject: self.showAuth,
+            onAddProject: self.showAuthOrPro,
             onDismiss: self.showDashboard
+        )
+        .environment(viewModel)
+        self.navigationView.show(
+            view: view
+        )
+    }
+    
+    private func showPurchasePro() {
+        let viewModel = self.viewModelFactory.makePurchaseViewModel()
+        let view = PurchaseProView(
+            onDone: self.showDashboard,
+            onDismiss: self.showPreferences
         )
         .environment(viewModel)
         self.navigationView.show(

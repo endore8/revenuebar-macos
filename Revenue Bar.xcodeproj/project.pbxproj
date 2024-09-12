@@ -8,16 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		F02631D32C88423100C8F1A3 /* Notifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631D22C88423100C8F1A3 /* Notifiers.swift */; };
-		F02631D52C8854D500C8F1A3 /* ProjectFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631D42C8854D500C8F1A3 /* ProjectFetcherService.swift */; };
 		F02631D72C885F7C00C8F1A3 /* Result+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631D62C885F7C00C8F1A3 /* Result+Convenience.swift */; };
 		F02631D92C88725000C8F1A3 /* Collection+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631D82C88725000C8F1A3 /* Collection+Convenience.swift */; };
 		F02631DB2C88894F00C8F1A3 /* AppMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631DA2C88894F00C8F1A3 /* AppMenu.swift */; };
 		F02631E52C89A96E00C8F1A3 /* Date+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631E42C89A96E00C8F1A3 /* Date+Convenience.swift */; };
 		F02631E82C89B19F00C8F1A3 /* HiddenIf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631E72C89B19F00C8F1A3 /* HiddenIf.swift */; };
 		F02631ED2C8A1A0D00C8F1A3 /* OpenAtLoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02631EC2C8A1A0D00C8F1A3 /* OpenAtLoginHandler.swift */; };
+		F02ABD5C2C931EDF005F01E9 /* PurchaseProView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02ABD5B2C931ED9005F01E9 /* PurchaseProView.swift */; };
+		F02ABD5E2C931EE7005F01E9 /* PurchaseProViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02ABD5D2C931EE2005F01E9 /* PurchaseProViewModel.swift */; };
+		F02ABD672C931F11005F01E9 /* ProjectMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02ABD632C931F11005F01E9 /* ProjectMetrics.swift */; };
+		F02ABD682C931F11005F01E9 /* ProjectMetricsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02ABD642C931F11005F01E9 /* ProjectMetricsStorage.swift */; };
+		F02ABD692C931F11005F01E9 /* ProjectFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02ABD622C931F11005F01E9 /* ProjectFetcherService.swift */; };
+		F02ABD6A2C931F11005F01E9 /* ProjectsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02ABD652C931F11005F01E9 /* ProjectsStorage.swift */; };
+		F02ABD6B2C931F11005F01E9 /* ProjectFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02ABD612C931F11005F01E9 /* ProjectFetcher.swift */; };
+		F02ABD6C2C931F11005F01E9 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02ABD602C931F11005F01E9 /* Project.swift */; };
+		F02ABD6E2C931F24005F01E9 /* ProStatusProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02ABD6D2C931F1A005F01E9 /* ProStatusProvider.swift */; };
 		F050EC9B2C8737EF00E0C328 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9A2C8737EF00E0C328 /* String+Convenience.swift */; };
 		F050EC9E2C873C1000E0C328 /* asyncOnMainThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9D2C873C1000E0C328 /* asyncOnMainThread.swift */; };
-		F050ECA02C87405400E0C328 /* ProjectMetricsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F050EC9F2C87405400E0C328 /* ProjectMetricsStorage.swift */; };
 		F05A79B02C8F3E35003A53CD /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A79AF2C8F3E35003A53CD /* Border.swift */; };
 		F05A79B22C8F3F35003A53CD /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A79B12C8F3F35003A53CD /* SeparatorView.swift */; };
 		F05A79B42C8F4A80003A53CD /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05A79B32C8F4A80003A53CD /* DemoView.swift */; };
@@ -60,11 +67,7 @@
 		F0FD1F9B2C843F9E0038FB60 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F9A2C843F9E0038FB60 /* ViewModelFactory.swift */; };
 		F0FD1F9D2C8440250038FB60 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F9C2C8440250038FB60 /* DashboardViewModel.swift */; };
 		F0FD1F9F2C84404D0038FB60 /* PreferencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1F9E2C84404D0038FB60 /* PreferencesViewModel.swift */; };
-		F0FD1FA22C849A620038FB60 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FA12C849A620038FB60 /* Project.swift */; };
-		F0FD1FA52C84A1DF0038FB60 /* ProjectsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FA42C84A1DF0038FB60 /* ProjectsStorage.swift */; };
 		F0FD1FA82C84A31A0038FB60 /* KeyValueStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FA72C84A31A0038FB60 /* KeyValueStorageKeys.swift */; };
-		F0FD1FB02C84C86F0038FB60 /* ProjectFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FAF2C84C86F0038FB60 /* ProjectFetcher.swift */; };
-		F0FD1FB22C84DB070038FB60 /* ProjectMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FB12C84DB070038FB60 /* ProjectMetrics.swift */; };
 		F0FD1FB42C84E06D0038FB60 /* Codable+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FB32C84E06D0038FB60 /* Codable+Convenience.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,16 +86,23 @@
 
 /* Begin PBXFileReference section */
 		F02631D22C88423100C8F1A3 /* Notifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifiers.swift; sourceTree = "<group>"; };
-		F02631D42C8854D500C8F1A3 /* ProjectFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFetcherService.swift; sourceTree = "<group>"; };
 		F02631D62C885F7C00C8F1A3 /* Result+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Convenience.swift"; sourceTree = "<group>"; };
 		F02631D82C88725000C8F1A3 /* Collection+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Convenience.swift"; sourceTree = "<group>"; };
 		F02631DA2C88894F00C8F1A3 /* AppMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenu.swift; sourceTree = "<group>"; };
 		F02631E42C89A96E00C8F1A3 /* Date+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Convenience.swift"; sourceTree = "<group>"; };
 		F02631E72C89B19F00C8F1A3 /* HiddenIf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenIf.swift; sourceTree = "<group>"; };
 		F02631EC2C8A1A0D00C8F1A3 /* OpenAtLoginHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAtLoginHandler.swift; sourceTree = "<group>"; };
+		F02ABD5B2C931ED9005F01E9 /* PurchaseProView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseProView.swift; sourceTree = "<group>"; };
+		F02ABD5D2C931EE2005F01E9 /* PurchaseProViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseProViewModel.swift; sourceTree = "<group>"; };
+		F02ABD602C931F11005F01E9 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		F02ABD612C931F11005F01E9 /* ProjectFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFetcher.swift; sourceTree = "<group>"; };
+		F02ABD622C931F11005F01E9 /* ProjectFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFetcherService.swift; sourceTree = "<group>"; };
+		F02ABD632C931F11005F01E9 /* ProjectMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMetrics.swift; sourceTree = "<group>"; };
+		F02ABD642C931F11005F01E9 /* ProjectMetricsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMetricsStorage.swift; sourceTree = "<group>"; };
+		F02ABD652C931F11005F01E9 /* ProjectsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsStorage.swift; sourceTree = "<group>"; };
+		F02ABD6D2C931F1A005F01E9 /* ProStatusProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProStatusProvider.swift; sourceTree = "<group>"; };
 		F050EC9A2C8737EF00E0C328 /* String+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
 		F050EC9D2C873C1000E0C328 /* asyncOnMainThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = asyncOnMainThread.swift; sourceTree = "<group>"; };
-		F050EC9F2C87405400E0C328 /* ProjectMetricsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMetricsStorage.swift; sourceTree = "<group>"; };
 		F05A79AF2C8F3E35003A53CD /* Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 		F05A79B12C8F3F35003A53CD /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		F05A79B32C8F4A80003A53CD /* DemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
@@ -134,11 +144,7 @@
 		F0FD1F9A2C843F9E0038FB60 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		F0FD1F9C2C8440250038FB60 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		F0FD1F9E2C84404D0038FB60 /* PreferencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewModel.swift; sourceTree = "<group>"; };
-		F0FD1FA12C849A620038FB60 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		F0FD1FA42C84A1DF0038FB60 /* ProjectsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsStorage.swift; sourceTree = "<group>"; };
 		F0FD1FA72C84A31A0038FB60 /* KeyValueStorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorageKeys.swift; sourceTree = "<group>"; };
-		F0FD1FAF2C84C86F0038FB60 /* ProjectFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFetcher.swift; sourceTree = "<group>"; };
-		F0FD1FB12C84DB070038FB60 /* ProjectMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMetrics.swift; sourceTree = "<group>"; };
 		F0FD1FB32C84E06D0038FB60 /* Codable+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,6 +185,36 @@
 				F02631EC2C8A1A0D00C8F1A3 /* OpenAtLoginHandler.swift */,
 			);
 			path = OpenAtLogin;
+			sourceTree = "<group>";
+		};
+		F02ABD5A2C931ECB005F01E9 /* PurchasePro */ = {
+			isa = PBXGroup;
+			children = (
+				F02ABD5B2C931ED9005F01E9 /* PurchaseProView.swift */,
+				F02ABD5D2C931EE2005F01E9 /* PurchaseProViewModel.swift */,
+			);
+			path = PurchasePro;
+			sourceTree = "<group>";
+		};
+		F02ABD5F2C931EEE005F01E9 /* Pro */ = {
+			isa = PBXGroup;
+			children = (
+				F02ABD6D2C931F1A005F01E9 /* ProStatusProvider.swift */,
+			);
+			path = Pro;
+			sourceTree = "<group>";
+		};
+		F02ABD662C931F11005F01E9 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				F02ABD602C931F11005F01E9 /* Project.swift */,
+				F02ABD612C931F11005F01E9 /* ProjectFetcher.swift */,
+				F02ABD622C931F11005F01E9 /* ProjectFetcherService.swift */,
+				F02ABD632C931F11005F01E9 /* ProjectMetrics.swift */,
+				F02ABD642C931F11005F01E9 /* ProjectMetricsStorage.swift */,
+				F02ABD652C931F11005F01E9 /* ProjectsStorage.swift */,
+			);
+			path = Project;
 			sourceTree = "<group>";
 		};
 		F050EC9C2C873C0500E0C328 /* Functions */ = {
@@ -273,6 +309,7 @@
 				F0FD1F4C2C8368C60038FB60 /* Auth */,
 				F0FD1F4D2C8368E40038FB60 /* Dashboard */,
 				F0FD1F4E2C8368EB0038FB60 /* Preferences */,
+				F02ABD5A2C931ECB005F01E9 /* PurchasePro */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -364,7 +401,8 @@
 				F0FD1F5D2C836C670038FB60 /* MenuBar */,
 				F0FD1F5E2C836C6E0038FB60 /* MenuPopover */,
 				F02631EB2C89FDCB00C8F1A3 /* OpenAtLogin */,
-				F0FD1FAE2C84C8410038FB60 /* Project */,
+				F02ABD5F2C931EEE005F01E9 /* Pro */,
+				F02ABD662C931F11005F01E9 /* Project */,
 				F0FD1FA62C84A30E0038FB60 /* Storage */,
 				F0D7665D2C875EAD006907B8 /* Views */,
 			);
@@ -445,20 +483,6 @@
 				F0FD1FA72C84A31A0038FB60 /* KeyValueStorageKeys.swift */,
 			);
 			path = Storage;
-			sourceTree = "<group>";
-		};
-		F0FD1FAE2C84C8410038FB60 /* Project */ = {
-			isa = PBXGroup;
-			children = (
-				F0FD1FA12C849A620038FB60 /* Project.swift */,
-				F0FD1FAF2C84C86F0038FB60 /* ProjectFetcher.swift */,
-				F02631D42C8854D500C8F1A3 /* ProjectFetcherService.swift */,
-				F0FD1FB12C84DB070038FB60 /* ProjectMetrics.swift */,
-				F050EC9F2C87405400E0C328 /* ProjectMetricsStorage.swift */,
-				F0FD1FA42C84A1DF0038FB60 /* ProjectsStorage.swift */,
-			);
-			name = Project;
-			path = ../Project;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -545,14 +569,11 @@
 				F0FD1F892C8382010038FB60 /* EventMonitor.swift in Sources */,
 				F02631E82C89B19F00C8F1A3 /* HiddenIf.swift in Sources */,
 				F0FD1F9F2C84404D0038FB60 /* PreferencesViewModel.swift in Sources */,
-				F0FD1FB22C84DB070038FB60 /* ProjectMetrics.swift in Sources */,
 				F0FD1F752C837A170038FB60 /* Int+Convenience.swift in Sources */,
 				F0FD1F502C83693E0038FB60 /* DashboardView.swift in Sources */,
 				F0FD1FA82C84A31A0038FB60 /* KeyValueStorageKeys.swift in Sources */,
 				F0D7666C2C8783FA006907B8 /* HeaderView.swift in Sources */,
-				F0FD1FA52C84A1DF0038FB60 /* ProjectsStorage.swift in Sources */,
 				F0D766682C877D2A006907B8 /* CornerRadius.swift in Sources */,
-				F0FD1FB02C84C86F0038FB60 /* ProjectFetcher.swift in Sources */,
 				F0FD1F542C8369580038FB60 /* PreferencesView.swift in Sources */,
 				F0FD1F912C838F1B0038FB60 /* MenuPopoverView.swift in Sources */,
 				F02631E52C89A96E00C8F1A3 /* Date+Convenience.swift in Sources */,
@@ -568,8 +589,8 @@
 				F0FD1F642C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift in Sources */,
 				F02631ED2C8A1A0D00C8F1A3 /* OpenAtLoginHandler.swift in Sources */,
 				F0FD1F662C8370EF0038FB60 /* MenuPopoverWindow.swift in Sources */,
+				F02ABD6E2C931F24005F01E9 /* ProStatusProvider.swift in Sources */,
 				F0D7666A2C877E7C006907B8 /* BorderWidth.swift in Sources */,
-				F02631D52C8854D500C8F1A3 /* ProjectFetcherService.swift in Sources */,
 				F05A79B02C8F3E35003A53CD /* Border.swift in Sources */,
 				F0D7665F2C875EB9006907B8 /* FooterView.swift in Sources */,
 				F02631D92C88725000C8F1A3 /* Collection+Convenience.swift in Sources */,
@@ -583,12 +604,17 @@
 				F0FD1F942C8394CC0038FB60 /* BaseNSView.swift in Sources */,
 				F0FD1F8B2C8386230038FB60 /* Numeric+Convenience.swift in Sources */,
 				F0FD1F6B2C8378D30038FB60 /* KeyValueStorage.swift in Sources */,
+				F02ABD5E2C931EE7005F01E9 /* PurchaseProViewModel.swift in Sources */,
 				F05A79B22C8F3F35003A53CD /* SeparatorView.swift in Sources */,
 				F0D766642C877CD4006907B8 /* Padding.swift in Sources */,
-				F0FD1FA22C849A620038FB60 /* Project.swift in Sources */,
 				F0FD1F572C836ADA0038FB60 /* Dependencies.swift in Sources */,
+				F02ABD672C931F11005F01E9 /* ProjectMetrics.swift in Sources */,
+				F02ABD682C931F11005F01E9 /* ProjectMetricsStorage.swift in Sources */,
+				F02ABD692C931F11005F01E9 /* ProjectFetcherService.swift in Sources */,
+				F02ABD6A2C931F11005F01E9 /* ProjectsStorage.swift in Sources */,
+				F02ABD6B2C931F11005F01E9 /* ProjectFetcher.swift in Sources */,
+				F02ABD6C2C931F11005F01E9 /* Project.swift in Sources */,
 				F02631D72C885F7C00C8F1A3 /* Result+Convenience.swift in Sources */,
-				F050ECA02C87405400E0C328 /* ProjectMetricsStorage.swift in Sources */,
 				F0FD1F592C836B050038FB60 /* MenuBarController.swift in Sources */,
 				F0FD1F982C843F410038FB60 /* AuthViewModel.swift in Sources */,
 				F0FD1F5B2C836B6A0038FB60 /* MenuPopoverController.swift in Sources */,
@@ -596,6 +622,7 @@
 				F0FD1F9D2C8440250038FB60 /* DashboardViewModel.swift in Sources */,
 				F05A79B42C8F4A80003A53CD /* DemoView.swift in Sources */,
 				F0D766662C877CF4006907B8 /* Opacity.swift in Sources */,
+				F02ABD5C2C931EDF005F01E9 /* PurchaseProView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

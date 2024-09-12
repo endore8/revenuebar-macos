@@ -17,3 +17,33 @@ extension Optional {
         self != nil
     }
 }
+
+extension Optional where Wrapped == Bool {
+
+    var not: Bool? {
+        guard
+            let value = self
+        else {
+            return nil
+        }
+        return value.not
+    }
+
+    var orFalse: Bool {
+        guard
+            let value = self
+        else {
+            return false
+        }
+        return value
+    }
+
+    var orTrue: Bool {
+        guard
+            let value = self
+        else {
+            return true
+        }
+        return value
+    }
+}

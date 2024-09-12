@@ -16,6 +16,7 @@ struct Dependencies {
     
     init() {
         
+        let keyValueStorage = UserDefaults.standard
         let securedKeyValueStorage = Keychain()
         
         let openAtLoginHandler = OpenAtLoginHandler(
@@ -34,6 +35,11 @@ struct Dependencies {
             projectMetricsStorage: projectMetricsStorage,
             projectsStorage: projectsStorage
         )
+        
+        let proStatusProvider = ProStatusProvider(
+            keyValueStorage: keyValueStorage
+        )
+        
         let viewModelFactory = ViewModelFactory(
             openAtLoginHandler: openAtLoginHandler,
             projectFetcher: projectFetcher,
@@ -45,6 +51,7 @@ struct Dependencies {
         let menuBarController = MenuBarController()
         let menuPopoverController = MenuPopoverController(
             projectsStorage: projectsStorage,
+            proStatusProvider: proStatusProvider,
             viewModelFactory: viewModelFactory
         )
         

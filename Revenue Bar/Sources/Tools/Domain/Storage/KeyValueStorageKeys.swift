@@ -9,5 +9,6 @@ import Foundation
 
 enum KeyValueStorageKeys {
     
+    static let isPro: KeyValueStorageKey<Bool> = "is-pro"
     static let projects: KeyValueStorageKey<[Project]> = "projects"
 }

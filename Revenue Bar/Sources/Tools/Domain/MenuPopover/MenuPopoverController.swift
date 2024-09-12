@@ -15,12 +15,15 @@ protocol MenuPopoverControllerType {
 final class MenuPopoverController: MenuPopoverControllerType {
     
     let projectsStorage: ProjectsStorageType
+    let proStatusProvider: ProStatusProviderType
     let viewModelFactory: ViewModelFactoryType
     
     init(projectsStorage: ProjectsStorageType,
+         proStatusProvider: ProStatusProviderType,
          viewModelFactory: ViewModelFactoryType) {
         
         self.projectsStorage = projectsStorage
+        self.proStatusProvider = proStatusProvider
         self.viewModelFactory = viewModelFactory
     }
     
@@ -52,6 +55,7 @@ final class MenuPopoverController: MenuPopoverControllerType {
         }
         let navigationCoordinator = MenuPopoverNavigationCoordinator(
             projectsStorage: self.projectsStorage,
+            proStatusProvider: self.proStatusProvider,
             viewModelFactory: self.viewModelFactory,
             onDismiss: { [weak self] in self?.hide() }
         )
