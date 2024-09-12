@@ -83,7 +83,7 @@ final class MenuPopoverNavigationCoordinator: MenuPopoverNavigationCoordinatorTy
     }
     
     private func showAuthOrPro() {
-        if self.proStatusProvider.isPro {
+        if self.proStatusProvider.isPro || self.projectsStorage.isDemo {
             self.showAuth()
         }
         else {
