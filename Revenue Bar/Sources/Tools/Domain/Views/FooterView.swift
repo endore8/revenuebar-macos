@@ -54,25 +54,25 @@ struct FooterView: View {
                 HStack(alignment: .center,
                        spacing: .Spacing.compact) {
                 Text(title)
-                    .font(.footnote)
+                    .font(.body)
                 Image(systemName: "chevron.right")
-                    .font(.subheadline)
+                    .font(.body)
                     .fontWeight(.semibold)
                 }
             }
             .buttonStyle(PlainButtonStyle())
-            .foregroundStyle(.secondary)
+            .foregroundStyle(.primary)
         case .refresh(let text, let onRefresh):
             HStack(alignment: .center,
                    spacing: .Spacing.compact) {
                 Button(action: onRefresh) {
                     Image(systemName: "arrow.clockwise")
-                        .font(.subheadline)
+                        .font(.body)
                         .fontWeight(.semibold)
                 }
                 .buttonStyle(PlainButtonStyle())
                 Text(text)
-                    .font(.footnote)
+                    .font(.body)
             }
             .foregroundStyle(.secondary)
         case .error(let text, let onRetry):
@@ -80,12 +80,12 @@ struct FooterView: View {
                    spacing: .Spacing.compact) {
                 Button(action: onRetry) {
                     Image(systemName: "arrow.clockwise")
-                        .font(.subheadline)
+                        .font(.body)
                         .fontWeight(.semibold)
                 }
                 .buttonStyle(PlainButtonStyle())
                 Text(text)
-                    .font(.footnote)
+                    .font(.body)
                     .foregroundStyle(.orange)
             }
             .foregroundStyle(.secondary)
@@ -104,9 +104,8 @@ struct FooterView: View {
         MenuButton(
             label: ZStack {
                 Image(systemName: "ellipsis")
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                    .foregroundStyle(.secondary)
+                    .font(.headline)
+                    .foregroundStyle(.primary)
                     .symbolRenderingMode(.palette)
             }.padding(.Padding.small).background(.background.secondary),
             content: {
