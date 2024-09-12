@@ -10,6 +10,10 @@ import RevenueCat
 
 struct ProPurchaseProduct: Hashable {
     let package: Package
+    
+    var id: String {
+        self.package.identifier
+    }
 }
 
 enum ProPurchaseProviderError: Error {
