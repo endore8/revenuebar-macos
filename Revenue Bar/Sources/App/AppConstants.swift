@@ -8,6 +8,6 @@
 enum AppConstants {
     
     enum ThirdParty {
-        static let revenueCat: String = ""
+        static let revenueCat: String = "appl_NsIvnXBcejeuCxQaUknagodKoJu"
     }
 }
