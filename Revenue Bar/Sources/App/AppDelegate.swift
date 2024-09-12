@@ -15,6 +15,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         
         let dependencies = Dependencies()
         
+        dependencies.projectsStorage.clearDemoProjects()
+        dependencies.proStatusService.start()
+        
         dependencies.menuBarController.onAction = { [weak self] in
             self?.presentMenuPopover(relativeTo: $0)
         }

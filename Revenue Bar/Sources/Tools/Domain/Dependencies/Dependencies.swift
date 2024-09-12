@@ -7,17 +7,22 @@
 
 import Foundation
 import KeychainAccess
+import RevenueCat
 
 struct Dependencies {
     
-    let projectFetcherService: ProjectFetcherServiceType
     let menuBarController: MenuBarControllerType
     let menuPopoverController: MenuPopoverControllerType
+    let projectFetcherService: ProjectFetcherServiceType
+    let projectsStorage: ProjectsStorageType
+    let proStatusService: ProStatusServiceType
     
     init() {
         
         let keyValueStorage = UserDefaults.standard
         let securedKeyValueStorage = Keychain()
+        
+        let deviceId = "TODO:" // TODO:
         
         let openAtLoginHandler = OpenAtLoginHandler(
             appService: .mainApp
@@ -36,8 +41,18 @@ struct Dependencies {
             projectsStorage: projectsStorage
         )
         
+        Purchases.logLevel = .warn
+        let purchases = Purchases.configure(
+            withAPIKey: AppConstants.ThirdParty.revenueCat,
+            appUserID: deviceId
+        )
+        
         let proStatusProvider = ProStatusProvider(
             keyValueStorage: keyValueStorage
+        )
+        let proStatusService = ProStatusRevenueCatService(
+            keyValueStorage: keyValueStorage,
+            purchases: purchases
         )
         
         let viewModelFactory = ViewModelFactory(
@@ -55,10 +70,10 @@ struct Dependencies {
             viewModelFactory: viewModelFactory
         )
         
-        projectsStorage.clearDemoProjects()
-        
-        self.projectFetcherService = projectFetcherService
         self.menuBarController = menuBarController
         self.menuPopoverController = menuPopoverController
+        self.projectFetcherService = projectFetcherService
+        self.projectsStorage = projectsStorage
+        self.proStatusService = proStatusService
     }
 }
