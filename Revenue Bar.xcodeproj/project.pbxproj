@@ -73,6 +73,7 @@
 		F0FFD8CF2C93245E00B95F8C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD8CE2C93245A00B95F8C /* AppConstants.swift */; };
 		F0FFD8D22C93269A00B95F8C /* DeviceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD8D12C93269800B95F8C /* DeviceId.swift */; };
 		F0FFD8D52C9326A600B95F8C /* DeviceIdProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD8D42C9326A600B95F8C /* DeviceIdProvider.swift */; };
+		F0FFD8D72C934B1D00B95F8C /* ProPurchaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD8D62C934B1D00B95F8C /* ProPurchaseProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -154,6 +155,7 @@
 		F0FFD8CE2C93245A00B95F8C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		F0FFD8D12C93269800B95F8C /* DeviceId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceId.swift; sourceTree = "<group>"; };
 		F0FFD8D42C9326A600B95F8C /* DeviceIdProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdProvider.swift; sourceTree = "<group>"; };
+		F0FFD8D62C934B1D00B95F8C /* ProPurchaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProPurchaseProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 		F02ABD5F2C931EEE005F01E9 /* Pro */ = {
 			isa = PBXGroup;
 			children = (
+				F0FFD8D62C934B1D00B95F8C /* ProPurchaseProvider.swift */,
 				F0FFD8CC2C93237B00B95F8C /* ProStatusService.swift */,
 				F02ABD6D2C931F1A005F01E9 /* ProStatusProvider.swift */,
 			);
@@ -599,6 +602,7 @@
 				F02631E52C89A96E00C8F1A3 /* Date+Convenience.swift in Sources */,
 				F0D766622C877CB2006907B8 /* Spacing.swift in Sources */,
 				F0FD1F9B2C843F9E0038FB60 /* ViewModelFactory.swift in Sources */,
+				F0FFD8D72C934B1D00B95F8C /* ProPurchaseProvider.swift in Sources */,
 				F0FD1FB42C84E06D0038FB60 /* Codable+Convenience.swift in Sources */,
 				F0FD1F772C837A3D0038FB60 /* Bool+Convenience.swift in Sources */,
 				F0FD1F602C836F400038FB60 /* main.swift in Sources */,

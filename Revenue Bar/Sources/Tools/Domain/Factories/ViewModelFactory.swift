@@ -21,6 +21,7 @@ struct ViewModelFactory: ViewModelFactoryType {
     let projectFetcherService: ProjectFetcherServiceType
     let projectMetricsStorage: ProjectMetricsStorageType
     let projectsStorage: ProjectsStorageType
+    let proPurchaseProvider: ProPurchaseProviderType
     
     // MARK: - ViewModelFactoryType
     
@@ -49,6 +50,8 @@ struct ViewModelFactory: ViewModelFactoryType {
     }
     
     func makePurchaseViewModel() -> PurchaseProViewModel {
-        PurchaseProViewModel()
+        PurchaseProViewModel(
+            proPurchaseProvider: self.proPurchaseProvider
+        )
     }
 }

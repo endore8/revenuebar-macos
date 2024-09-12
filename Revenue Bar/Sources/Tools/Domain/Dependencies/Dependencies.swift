@@ -50,6 +50,10 @@ struct Dependencies {
             appUserID: deviceId
         )
         
+        let proPurchaseProvider = ProPurchaseRevenueCatProvider(
+            keyValueStorage: keyValueStorage,
+            purchases: purchases
+        )
         let proStatusProvider = ProStatusProvider(
             keyValueStorage: keyValueStorage
         )
@@ -63,7 +67,8 @@ struct Dependencies {
             projectFetcher: projectFetcher,
             projectFetcherService: projectFetcherService,
             projectMetricsStorage: projectMetricsStorage,
-            projectsStorage: projectsStorage
+            projectsStorage: projectsStorage,
+            proPurchaseProvider: proPurchaseProvider
         )
         
         let menuBarController = MenuBarController()

@@ -9,4 +9,10 @@ import Foundation
 
 @Observable
 final class PurchaseProViewModel {
+    
+    let proPurchaseProvider: ProPurchaseProviderType
+    
+    init(proPurchaseProvider: ProPurchaseProviderType) {
+        self.proPurchaseProvider = proPurchaseProvider
+    }
 }
