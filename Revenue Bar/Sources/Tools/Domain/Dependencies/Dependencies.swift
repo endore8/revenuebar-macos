@@ -20,9 +20,12 @@ struct Dependencies {
     init() {
         
         let keyValueStorage = UserDefaults.standard
-        let securedKeyValueStorage = Keychain()
+        let keyValueStorageSecured = Keychain()
         
-        let deviceId = "TODO:" // TODO:
+        let deviceId = DeviceIdProvider(
+            keyValueStorage: keyValueStorageSecured,
+            keyValueStorageBackup: keyValueStorage
+        ).id
         
         let openAtLoginHandler = OpenAtLoginHandler(
             appService: .mainApp
@@ -33,7 +36,7 @@ struct Dependencies {
         )
         let projectMetricsStorage = ProjectMetricsStorage()
         let projectsStorage = ProjectsStorage(
-            keyValueStorage: securedKeyValueStorage
+            keyValueStorage: keyValueStorageSecured
         )
         let projectFetcherService = ProjectFetcherService(
             projectFetcher: projectFetcher,

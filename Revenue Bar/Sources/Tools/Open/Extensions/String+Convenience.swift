@@ -9,4 +9,8 @@ import Foundation
 
 extension String {
     static let empty: String = ""
+    
+    static var uuidString: String {
+        UUID().uuidString
+    }
 }

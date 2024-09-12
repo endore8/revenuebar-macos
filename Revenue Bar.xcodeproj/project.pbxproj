@@ -71,6 +71,8 @@
 		F0FD1FB42C84E06D0038FB60 /* Codable+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD1FB32C84E06D0038FB60 /* Codable+Convenience.swift */; };
 		F0FFD8CD2C93237E00B95F8C /* ProStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD8CC2C93237B00B95F8C /* ProStatusService.swift */; };
 		F0FFD8CF2C93245E00B95F8C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD8CE2C93245A00B95F8C /* AppConstants.swift */; };
+		F0FFD8D22C93269A00B95F8C /* DeviceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD8D12C93269800B95F8C /* DeviceId.swift */; };
+		F0FFD8D52C9326A600B95F8C /* DeviceIdProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FFD8D42C9326A600B95F8C /* DeviceIdProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -150,6 +152,8 @@
 		F0FD1FB32C84E06D0038FB60 /* Codable+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Convenience.swift"; sourceTree = "<group>"; };
 		F0FFD8CC2C93237B00B95F8C /* ProStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProStatusService.swift; sourceTree = "<group>"; };
 		F0FFD8CE2C93245A00B95F8C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		F0FFD8D12C93269800B95F8C /* DeviceId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceId.swift; sourceTree = "<group>"; };
+		F0FFD8D42C9326A600B95F8C /* DeviceIdProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIdProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,6 +407,7 @@
 			children = (
 				F0D766602C877CA4006907B8 /* Constants */,
 				F0FD1F5C2C836C600038FB60 /* Dependencies */,
+				F0FFD8D02C93268F00B95F8C /* DeviceId */,
 				F0FD1F992C843F940038FB60 /* Factories */,
 				F0FD1F5D2C836C670038FB60 /* MenuBar */,
 				F0FD1F5E2C836C6E0038FB60 /* MenuPopover */,
@@ -489,6 +494,15 @@
 				F0FD1FA72C84A31A0038FB60 /* KeyValueStorageKeys.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		F0FFD8D02C93268F00B95F8C /* DeviceId */ = {
+			isa = PBXGroup;
+			children = (
+				F0FFD8D12C93269800B95F8C /* DeviceId.swift */,
+				F0FFD8D42C9326A600B95F8C /* DeviceIdProvider.swift */,
+			);
+			path = DeviceId;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -594,6 +608,7 @@
 				F0FD1F732C837A000038FB60 /* Double+Convenience.swift in Sources */,
 				F0FD1F8D2C8389C10038FB60 /* Optional+Convenience.swift in Sources */,
 				F0FD1F642C8370AB0038FB60 /* MenuPopoverNavigationCoordinator.swift in Sources */,
+				F0FFD8D52C9326A600B95F8C /* DeviceIdProvider.swift in Sources */,
 				F02631ED2C8A1A0D00C8F1A3 /* OpenAtLoginHandler.swift in Sources */,
 				F0FD1F662C8370EF0038FB60 /* MenuPopoverWindow.swift in Sources */,
 				F02ABD6E2C931F24005F01E9 /* ProStatusProvider.swift in Sources */,
@@ -627,6 +642,7 @@
 				F0FFD8CD2C93237E00B95F8C /* ProStatusService.swift in Sources */,
 				F0FD1F5B2C836B6A0038FB60 /* MenuPopoverController.swift in Sources */,
 				F050EC9B2C8737EF00E0C328 /* String+Convenience.swift in Sources */,
+				F0FFD8D22C93269A00B95F8C /* DeviceId.swift in Sources */,
 				F0FD1F9D2C8440250038FB60 /* DashboardViewModel.swift in Sources */,
 				F05A79B42C8F4A80003A53CD /* DemoView.swift in Sources */,
 				F0D766662C877CF4006907B8 /* Opacity.swift in Sources */,
