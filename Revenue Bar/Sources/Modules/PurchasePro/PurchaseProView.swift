@@ -62,12 +62,18 @@ struct PurchaseProView: View {
                                             .tint(.white)
                                             .hidden(if: self.viewModel.purchasingProductId != product.id)
                                     }
+                                    Rectangle()
+                                        .frame(height: .one)
+                                        .foregroundColor(.white)
+                                        .opacity(.Opacity.mild)
+                                        .frame(maxWidth: 100)
                                     Text(product.localizedPeriodTitle ?? .empty)
                                         .font(.body)
+                                        .opacity(.Opacity.dimmed)
                                 }
                                 .padding(.Padding.inner)
                                 .foregroundStyle(.white)
-                                .background(.blue.gradient)
+                                .background(.pink.gradient)
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
