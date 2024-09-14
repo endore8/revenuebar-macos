@@ -70,8 +70,8 @@ struct PreferencesView: View {
     
     @ViewBuilder
     private var preferencesView: some View {
-        VStack(spacing: .Spacing.none) {
-            HStack(alignment: .center, 
+        VStack(spacing: .Spacing.inner) {
+            HStack(alignment: .center,
                    spacing: .Spacing.inner) {
                 Text("Open at login")
                     .font(.body)
@@ -88,6 +88,20 @@ struct PreferencesView: View {
                 }
             }
             .padding(.trailing, .Padding.small)
+            SeparatorView()
+            Button(action: self.sendFeedback) {
+                HStack(alignment: .center,
+                       spacing: .Spacing.inner) {
+                    Text("Send feedback")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Image(systemName: "paperplane")
+                }
+                .font(.body)
+                .fontWeight(.medium)
+                .foregroundStyle(.primary)
+                .padding(.trailing, .Padding.small)
+            }
+            .buttonStyle(PlainButtonStyle())
         }
     }
     
@@ -96,6 +110,13 @@ struct PreferencesView: View {
         
     @Environment(PreferencesViewModel.self)
     private var viewModel
+    
+    @Environment(\.openURL)
+    private var openURL
+    
+    private func sendFeedback() {
+        self.openURL(URL(string: "mailto:endore8@gmail.com?subject=Revenue%20Bar%20Feedback")!)
+    }
 }
 
 struct PreferencesProjectView: View {
