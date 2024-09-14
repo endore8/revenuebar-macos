@@ -9,6 +9,11 @@ import Foundation
 
 extension Numeric {
     
+    /// `+1`
+    var incremented: Self {
+        self + 1
+    }
+    
     /// `1`
     static var one: Self {
         1

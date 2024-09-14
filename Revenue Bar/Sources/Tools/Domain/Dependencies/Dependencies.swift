@@ -27,6 +27,12 @@ struct Dependencies {
             keyValueStorageBackup: keyValueStorage
         ).id
         
+        _ = AppLaunchTracking(
+            bundle: .main,
+            keyValueStorage: keyValueStorageSecured,
+            keyValueStorageBackup: keyValueStorage
+        )
+        
         let openAtLoginHandler = OpenAtLoginHandler(
             appService: .mainApp
         )

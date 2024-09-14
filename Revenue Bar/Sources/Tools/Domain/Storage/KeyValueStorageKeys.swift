@@ -12,4 +12,8 @@ enum KeyValueStorageKeys {
     static let deviceId: KeyValueStorageKey<DeviceId> = "device-id"
     static let isPro: KeyValueStorageKey<Bool> = "is-pro"
     static let projects: KeyValueStorageKey<[Project]> = "projects"
+    
+    static let currentLaunchNumber: KeyValueStorageKey<Int> = "current-launch-number"
+    static let firstLaunchAppVersion: KeyValueStorageKey<String> = "first-launch-app-version"
+    static let firstLaunchTimestamp: KeyValueStorageKey<TimeInterval> = "first-launch-timestamp"
 }
