@@ -8,6 +8,11 @@
 import Foundation
 
 extension String {
+    
+    var asMarkdownAttributedString: AttributedString {
+        (try? AttributedString(markdown: self, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace))) ?? AttributedString(self)
+    }
+    
     static let empty: String = ""
     
     static var uuidString: String {
