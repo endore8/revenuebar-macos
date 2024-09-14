@@ -74,6 +74,7 @@ struct PurchaseProView: View {
                                 .padding(.Padding.inner)
                                 .foregroundStyle(.white)
                                 .background(.pink.gradient)
+                                .clipShape(RoundedRectangle(cornerRadius: .CornerRadius.four))
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
