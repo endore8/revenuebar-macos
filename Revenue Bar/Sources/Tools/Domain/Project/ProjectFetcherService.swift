@@ -29,14 +29,15 @@ final class ProjectFetcherService: ProjectFetcherServiceType {
         self.projectMetricsStorage = projectMetricsStorage
         self.projectsStorage = projectsStorage
         
-        self.update()
-        
-        self.projectsStorage
-            .onChange
-            .sink { [weak self] in
-                self?.update()
-            }
-            .store(in: &self.notifierContainer)
+        // Disabled until menu bar component needs background refresh.
+//        self.update()
+//        
+//        self.projectsStorage
+//            .onChange
+//            .sink { [weak self] in
+//                self?.update()
+//            }
+//            .store(in: &self.notifierContainer)
     }
     
     // MARK: - ProjectFetcherServiceType
@@ -103,21 +104,21 @@ final class ProjectFetcherService: ProjectFetcherServiceType {
         self.onChange.send()
     }
     
-    private func update() {
-        if self.projectsStorage.projects.isNotNil && self.projectsStorage.isDemo.not {
-            let timer = DispatchSource.makeTimerSource()
-            timer.setEventHandler { [weak self] in
-                self?.reload()
-            }
-            timer.schedule(deadline: .now(),
-                           repeating: .seconds(60 * 60)) // 1 hour
-            timer.activate()
-            
-            self.timer = timer
-        }
-        else {
-            self.timer?.cancel()
-            self.timer = nil
-        }
-    }
+//    private func update() {
+//        if self.projectsStorage.projects.isNotNil && self.projectsStorage.isDemo.not {
+//            let timer = DispatchSource.makeTimerSource()
+//            timer.setEventHandler { [weak self] in
+//                self?.reload()
+//            }
+//            timer.schedule(deadline: .now(),
+//                           repeating: .seconds(60 * 60)) // 1 hour
+//            timer.activate()
+//            
+//            self.timer = timer
+//        }
+//        else {
+//            self.timer?.cancel()
+//            self.timer = nil
+//        }
+//    }
 }

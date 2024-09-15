@@ -43,7 +43,7 @@ struct DashboardView: View {
             )
         }
         .onAppear {
-            if self.viewModel.isReloading.not && self.viewModel.lastReloadError.isNotNil {
+            if self.viewModel.isReloading.not {
                 self.viewModel.reload()
             }
         }
