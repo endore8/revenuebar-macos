@@ -20,10 +20,7 @@ struct AuthView: View {
             )
             self.contentView
             FooterView(
-                accessory: .action(
-                    title: "See demo",
-                    onAction: self.continueWithDemo
-                )
+                accessory: self.footerAccessory
             )
         }
         .disabled(self.viewModel.isAuthorizing || self.viewModel.isAuthorized)
@@ -171,6 +168,12 @@ struct AuthView: View {
     
     @Environment(AuthViewModel.self)
     private var viewModel
+    
+    private var footerAccessory: FooterView.Accessory {
+        self.viewModel.isFirstAuthorization ? 
+            .action(title: "See demo", onAction: self.continueWithDemo) :
+            .none
+    }
     
     private func `continue`() {
         self.viewModel.authorize()

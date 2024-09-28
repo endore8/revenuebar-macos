@@ -35,6 +35,10 @@ final class AuthViewModel {
     
     private(set) var error: String?
     
+    var isFirstAuthorization: Bool {
+        self.projectsStorage.projects.isNil
+    }
+    
     func authorize() {
         guard 
             self.canContinue
